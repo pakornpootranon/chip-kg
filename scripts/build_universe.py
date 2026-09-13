@@ -76,7 +76,7 @@ ROWS = [
     ("sumitomo_chemical", "Sumitomo Chemical", "4005.T", "TSE", "JP", "Materials", 3, False, "sumitomo chemical"),
     ("resonac", "Resonac Holdings", "4004.T", "TSE", "JP", "Materials", 3, False, "resonac"),
     ("hoya", "HOYA", "7741.T", "TSE", "JP", "Materials", 1, True, "hoya"),
-    ("agc", "AGC", "5201.T", "TSE", "JP", "Materials", 2, False, "agc inc"),
+    ("agc", "AGC", "5201.T", "TSE", "JP", "Materials", 2, True, "agc inc"),
     ("ajinomoto", "Ajinomoto", "2802.T", "TSE", "JP", "Materials", 1, True, "ajinomoto"),
     ("photronics", "Photronics", "PLAB", "NASDAQ", "US", "Materials", 3, False, "photronics"),
     ("entegris", "Entegris", "ENTG", "NASDAQ", "US", "Materials", 2, False, "entegris"),

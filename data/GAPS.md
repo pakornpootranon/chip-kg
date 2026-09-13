@@ -1,5 +1,19 @@
 # Gaps and judgment calls
 
+## Task 3 notes (2026-09-13): rich nodes and edges
+
+How the edges were sourced. Every edge from the Essential Guide carries source `guide` and confidence high. The v1 edges that came from Bigdata.com keep their original source strings. Everything else, 718 of 869 edges, carries source `claude-knowledge` and confidence medium: relationships Claude is confident about from public reporting but did not fetch a URL for in this session. They are dated 2026-09-13 so screen 05 (stale edges) will surface them as a block when the time comes. The right way to upgrade one is to replace `claude-knowledge` with a URL and raise confidence to high; do not delete.
+
+Relationships believed but left out because the counterparty is not a node: Zeiss SMT supplies the optics for every ASML EUV machine and Cymer (an ASML subsidiary) the light source, both unlisted. JSR is a top photoresist supplier, delisted 2024. SiFive competes with Andes and Arm in RISC-V, private. Huawei/HiSilicon is SMIC's most important customer, unlisted. CXMT is the Chinese DRAM challenger to Samsung, SK Hynix and Micron, private. Nintendo is Macronix's largest customer, out of scope. Toppan and DNP are the other photomask makers alongside Photronics, out of scope. Shinko is the other big substrate maker alongside Ibiden, taken private. SK Siltron is the fifth wafer maker, private.
+
+Relationships that are real but whose direction is a judgment call: Foxconn (Hon Hai) both buys NVIDIA modules and supplies NVIDIA with assembled systems; recorded as NVIDIA supplies Hon Hai and Hon Hai supplies NVIDIA. The subsystem makers (MKS, Advanced Energy, Ichor, Ultra Clean) supply the equipment makers, not the fabs, so they sit two hops upstream of TSMC.
+
+Chokepoint edges added beyond the guide's seven: EUV Mask Inspection (Lasertec, sole supplier), EUV Mask Blanks (HOYA and AGC), ABF Substrate Film (Ajinomoto). Also added Micron and Samsung as controllers of HBM Memory (medium) and Samsung of Advanced Foundry (medium), matching the guide's own tables where they appear as the second source. AGC's chokepoint flag was flipped to true after the universe review so the flag and the CONTROLS edge agree. GlobalWafers keeps v1's Silicon Wafers control edge.
+
+Technologies added: CoWoS, GAA, Hybrid Bonding, Silicon Carbide. DEPENDS_ON edges only where the technology is central to the company's business, so no edge for every fab that owns one EUV tool.
+
+Not in the graph and worth adding when sourced: Micron's and Samsung's actual HBM share of NVIDIA volume; which Chinese fabless firms have moved from TSMC to SMIC; Intel Foundry's external customers (none material as of this date); Apple's modem supply after the C1.
+
 ## Task 2 notes (2026-09-13): universe.csv, for Pootranon's review
 
 Dropped from v1 because they are not listed: Zeiss SMT (Carl Zeiss AG is private), Cymer (ASML subsidiary), JSR (taken private by JIC in 2024), YMTC, Huawei/HiSilicon, Imagination Technologies, SiFive. Their supply relationships can still appear in descriptions but they get no node.

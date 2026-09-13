@@ -42,12 +42,12 @@ STOP. Pootranon reviews the universe and tiers before any rich data is written.
 
 ## Task 3: Rich nodes and edges
 
-- [ ] For each approved company write the rich properties into `data/nodes.csv`: `sub_segment, description, key_products, key_customers, fab_or_ops_geography`. Lists pipe-separated
-- [ ] Add Layer, Technology, Country, Chokepoint rows
-- [ ] `data/edges.csv`: `from_id, to_id, type, as_of, source, confidence`. Every Company gets exactly one OPERATES_IN and one HQ_IN. SUPPLIES and COMPETES_WITH from the guide first, then from the research URLs
-- [ ] `data/GAPS.md`: every relationship you believed but could not source
+- [x] For each approved company write the rich properties into `data/nodes.csv`: `sub_segment, description, key_products, key_customers, fab_or_ops_geography`. Lists pipe-separated. Done 2026-09-13 for all 171 in one session (four batches by layer, assembled by a scratch script; the CSV is the source of truth). Columns: `id,label,name,ticker,exchange,country,layer,sub_segment,tier,chokepoint,description,key_products,key_customers,fab_or_ops_geography,source,order,code`, unused columns blank per label. All ids migrated to `co:` `ly:` `te:` `cn:` `cp:` prefixes
+- [x] Add Layer, Technology, Country, Chokepoint rows: 10 layers, 10 technologies (v1's six plus CoWoS, GAA, Hybrid Bonding, Silicon Carbide), 15 countries, 10 chokepoints (guide's seven plus EUV Mask Inspection, EUV Mask Blanks, ABF Substrate Film). 216 nodes total
+- [x] `data/edges.csv`: 869 edges. OPERATES_IN 171, HQ_IN 171, SUPPLIES 304, COMPETES_WITH 151, DEPENDS_ON 53, CONTROLS 19. Sources: guide 111, v1 Bigdata.com strings 40, `claude-knowledge` 718 (medium confidence, see GAPS). Four v1 edges dropped because an endpoint is unlisted
+- [x] `data/GAPS.md`: every relationship you believed but could not source. Task 3 notes section
 
-Done when: `data/` complete and counts printed. Work in batches of 20 companies per session if context gets heavy; commit after each batch.
+Done when: `data/` complete and counts printed. Work in batches of 20 companies per session if context gets heavy; commit after each batch. Done 2026-09-13; the v1 `validate.py` passes on the new files, the v2 checks come in Task 4.
 
 ## Task 4: Validate and load
 

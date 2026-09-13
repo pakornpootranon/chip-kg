@@ -1,268 +1,870 @@
 from_id,to_id,type,as_of,source,confidence
-c_asml,l_equipment,OPERATES_IN,2026-04-01,essential-guide,high
-c_applied_materials,l_equipment,OPERATES_IN,2026-04-01,essential-guide,high
-c_lam_research,l_equipment,OPERATES_IN,2026-04-01,essential-guide,high
-c_kla,l_equipment,OPERATES_IN,2026-04-01,essential-guide,high
-c_tokyo_electron,l_equipment,OPERATES_IN,2026-04-01,essential-guide,high
-c_zeiss,l_equipment,OPERATES_IN,2026-04-01,essential-guide,medium
-c_cymer,l_equipment,OPERATES_IN,2026-04-01,essential-guide,medium
-c_shin_etsu,l_materials,OPERATES_IN,2026-04-01,essential-guide,high
-c_sumco,l_materials,OPERATES_IN,2026-04-01,essential-guide,high
-c_jsr,l_materials,OPERATES_IN,2026-04-01,essential-guide,high
-c_tok,l_materials,OPERATES_IN,2026-04-01,essential-guide,high
-c_tsmc,l_foundry,OPERATES_IN,2026-04-01,essential-guide,high
-c_smic,l_foundry,OPERATES_IN,2026-04-01,essential-guide,high
-c_globalfoundries,l_foundry,OPERATES_IN,2026-04-01,essential-guide,high
-c_samsung,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_intel,l_idm,OPERATES_IN,2026-04-01,essential-guide,high
-c_micron,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_ti,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_infineon,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_sony,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_on_semi,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_cirrus_logic,l_idm,OPERATES_IN,2026-04-01,essential-guide,medium
-c_sk_hynix,l_memory,OPERATES_IN,2026-04-01,essential-guide,high
-c_kioxia,l_memory,OPERATES_IN,2026-04-01,essential-guide,high
-c_ymtc,l_memory,OPERATES_IN,2026-04-01,essential-guide,high
-c_winbond,l_memory,OPERATES_IN,2026-04-01,essential-guide,medium
-c_macronix,l_memory,OPERATES_IN,2026-04-01,essential-guide,medium
-c_ase,l_packaging,OPERATES_IN,2026-04-01,essential-guide,high
-c_amkor,l_packaging,OPERATES_IN,2026-04-01,essential-guide,high
-c_jcet,l_packaging,OPERATES_IN,2026-04-01,essential-guide,high
-c_nvidia,l_fabless,OPERATES_IN,2026-04-01,essential-guide,high
-c_amd,l_fabless,OPERATES_IN,2026-04-01,essential-guide,high
-c_qualcomm,l_fabless,OPERATES_IN,2026-04-01,essential-guide,high
-c_broadcom,l_fabless,OPERATES_IN,2026-04-01,essential-guide,high
-c_mediatek,l_fabless,OPERATES_IN,2026-04-01,essential-guide,high
-c_apple,l_fabless,OPERATES_IN,2026-04-01,essential-guide,medium
-c_huawei_hisilicon,l_fabless,OPERATES_IN,2026-04-01,essential-guide,medium
-c_realtek,l_fabless,OPERATES_IN,2026-04-01,essential-guide,medium
-c_cadence,l_eda,OPERATES_IN,2026-04-01,essential-guide,high
-c_synopsys,l_eda,OPERATES_IN,2026-04-01,essential-guide,high
-c_siemens_mentor,l_eda,OPERATES_IN,2026-04-01,essential-guide,high
-c_wdc,l_enddemand,OPERATES_IN,2026-04-01,essential-guide,medium
-c_seagate,l_enddemand,OPERATES_IN,2026-04-01,essential-guide,medium
-c_pure_storage,l_enddemand,OPERATES_IN,2026-04-01,essential-guide,medium
-c_asml,co_nl,HQ_IN,2026-04-01,essential-guide,high
-c_applied_materials,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_lam_research,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_kla,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_tokyo_electron,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_zeiss,co_de,HQ_IN,2026-04-01,essential-guide,high
-c_cymer,co_us,HQ_IN,2026-04-01,essential-guide,medium
-c_shin_etsu,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_sumco,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_jsr,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_tok,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_tsmc,co_tw,HQ_IN,2026-04-01,essential-guide,high
-c_smic,co_cn,HQ_IN,2026-04-01,essential-guide,high
-c_globalfoundries,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_samsung,co_kr,HQ_IN,2026-04-01,essential-guide,high
-c_intel,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_micron,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_ti,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_infineon,co_de,HQ_IN,2026-04-01,essential-guide,high
-c_sony,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_on_semi,co_us,HQ_IN,2026-04-01,essential-guide,medium
-c_cirrus_logic,co_us,HQ_IN,2026-04-01,essential-guide,medium
-c_sk_hynix,co_kr,HQ_IN,2026-04-01,essential-guide,high
-c_kioxia,co_jp,HQ_IN,2026-04-01,essential-guide,high
-c_ymtc,co_cn,HQ_IN,2026-04-01,essential-guide,high
-c_winbond,co_tw,HQ_IN,2026-04-01,essential-guide,medium
-c_macronix,co_tw,HQ_IN,2026-04-01,essential-guide,medium
-c_ase,co_tw,HQ_IN,2026-04-01,essential-guide,high
-c_amkor,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_jcet,co_cn,HQ_IN,2026-04-01,essential-guide,high
-c_nvidia,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_amd,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_qualcomm,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_broadcom,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_mediatek,co_tw,HQ_IN,2026-04-01,essential-guide,high
-c_apple,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_huawei_hisilicon,co_cn,HQ_IN,2026-04-01,essential-guide,high
-c_realtek,co_tw,HQ_IN,2026-04-01,essential-guide,medium
-c_cadence,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_synopsys,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_siemens_mentor,co_de,HQ_IN,2026-04-01,essential-guide,medium
-c_wdc,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_seagate,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_pure_storage,co_us,HQ_IN,2026-04-01,essential-guide,high
-c_asml,ch_euv_lithography,CONTROLS,2026-04-01,essential-guide,high
-c_tsmc,ch_advanced_foundry,CONTROLS,2026-04-01,essential-guide,high
-c_cadence,ch_eda_software,CONTROLS,2026-04-01,essential-guide,high
-c_synopsys,ch_eda_software,CONTROLS,2026-04-01,essential-guide,high
-c_sk_hynix,ch_hbm_memory,CONTROLS,2026-04-01,essential-guide,high
-c_ase,ch_advanced_packaging,CONTROLS,2026-04-01,essential-guide,medium
-c_tsmc,ch_advanced_packaging,CONTROLS,2026-04-01,essential-guide,medium
-c_tsmc,t_euv,DEPENDS_ON,2026-04-01,essential-guide,high
-c_samsung,t_euv,DEPENDS_ON,2026-04-01,essential-guide,medium
-c_intel,t_euv,DEPENDS_ON,2026-04-01,essential-guide,medium
-c_nvidia,t_hbm,DEPENDS_ON,2026-04-01,essential-guide,high
-c_sk_hynix,t_hbm,DEPENDS_ON,2026-04-01,essential-guide,high
-c_micron,t_hbm,DEPENDS_ON,2026-04-01,essential-guide,high
-c_samsung,t_hbm,DEPENDS_ON,2026-04-01,essential-guide,medium
-c_zeiss,c_asml,SUPPLIES,2026-04-01,essential-guide,high
-c_cymer,c_asml,SUPPLIES,2026-04-01,essential-guide,high
-c_tsmc,c_nvidia,SUPPLIES,2026-04-01,essential-guide,high
-c_tsmc,c_amd,SUPPLIES,2026-04-01,essential-guide,high
-c_tsmc,c_apple,SUPPLIES,2026-04-01,essential-guide,high
-c_tsmc,c_qualcomm,SUPPLIES,2026-04-01,essential-guide,high
-c_samsung,c_qualcomm,SUPPLIES,2026-04-01,essential-guide,medium
-c_tsmc,c_broadcom,SUPPLIES,2026-04-01,essential-guide,high
-c_tsmc,c_mediatek,SUPPLIES,2026-04-01,essential-guide,high
-c_sk_hynix,c_nvidia,SUPPLIES,2026-04-01,essential-guide,high
-c_micron,c_nvidia,SUPPLIES,2026-04-01,essential-guide,high
-c_amd,c_intel,COMPETES_WITH,2026-04-01,essential-guide,medium
-c_amd,c_nvidia,COMPETES_WITH,2026-04-01,essential-guide,medium
-c_applied_materials,c_lam_research,COMPETES_WITH,2026-04-01,essential-guide,medium
-c_amkor,c_ase,COMPETES_WITH,2026-04-01,essential-guide,high
-c_cadence,c_synopsys,COMPETES_WITH,2026-04-01,essential-guide,high
-c_micron,c_samsung,COMPETES_WITH,2026-04-01,essential-guide,high
-c_micron,c_sk_hynix,COMPETES_WITH,2026-04-01,essential-guide,high
-c_samsung,c_sk_hynix,COMPETES_WITH,2026-04-01,essential-guide,high
-c_samsung,c_tsmc,COMPETES_WITH,2026-04-01,essential-guide,medium
-c_seagate,c_wdc,COMPETES_WITH,2026-04-01,essential-guide,medium
-c_keysight,l_eda,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_keysight,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_empyrean,l_eda,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_empyrean,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_silvaco,l_eda,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_silvaco,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_arm,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_arm,co_gb,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_ceva,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_ceva,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_rambus,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_rambus,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_imagination,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_imagination,co_gb,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_andes,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_andes,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_verisilicon,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_verisilicon,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_sifive,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_sifive,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_asm_intl,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_asm_intl,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_advantest,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_advantest,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_teradyne,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_teradyne,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_nikon,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_nikon,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_canon,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_canon,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_screen_holdings,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_screen_holdings,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_besi,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_besi,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_onto,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_onto,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_globalwafers,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_globalwafers,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_entegris,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_entegris,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_resonac,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_resonac,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_fujifilm,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_fujifilm,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_sumitomo_chemical,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_sumitomo_chemical,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_air_products,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_air_products,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_linde,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_linde,co_ie,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_umc,l_foundry,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_umc,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_tower_semi,l_foundry,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_tower_semi,co_il,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_stmicro,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_stmicro,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_nxp,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_nxp,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_adi,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_adi,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_renesas,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_renesas,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_microchip,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_microchip,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_sandisk,l_memory,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_sandisk,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_nanya,l_memory,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_nanya,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_gigadevice,l_memory,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_gigadevice,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_pti,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_pti,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_kyec,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_kyec,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_tongfu,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_tongfu,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_chipbond,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_chipbond,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_marvell,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_marvell,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_lattice,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_lattice,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_astera_labs,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_astera_labs,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_novatek,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_novatek,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_himax,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_himax,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_microsoft,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_microsoft,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_alphabet,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_alphabet,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_amazon,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_amazon,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_meta,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_meta,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_supermicro,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
-c_supermicro,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
-c_shin_etsu,ch_silicon_wafers,CONTROLS,2026-04-01,essential-guide,high
-c_sumco,ch_silicon_wafers,CONTROLS,2026-04-01,essential-guide,high
-c_globalwafers,ch_silicon_wafers,CONTROLS,2026-09-13,bigdata.com / industry knowledge,medium
-c_shin_etsu,ch_photoresist,CONTROLS,2026-04-01,essential-guide,high
-c_jsr,ch_photoresist,CONTROLS,2026-04-01,essential-guide,high
-c_tok,ch_photoresist,CONTROLS,2026-04-01,essential-guide,high
-c_globalfoundries,c_umc,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_tsmc,c_umc,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_globalfoundries,c_tower_semi,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_infineon,c_stmicro,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_stmicro,c_ti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_infineon,c_nxp,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_adi,c_ti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_infineon,c_renesas,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_microchip,c_ti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_broadcom,c_marvell,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_amd,c_lattice,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_intel,c_lattice,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_andes,c_sifive,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_globalwafers,c_shin_etsu,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_globalwafers,c_sumco,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_advantest,c_teradyne,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_asml,c_nikon,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_applied_materials,c_asm_intl,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_kla,c_onto,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_micron,c_sandisk,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_sandisk,c_sk_hynix,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_kioxia,c_sandisk,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_micron,c_nanya,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_gigadevice,c_winbond,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_gigadevice,c_macronix,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_ase,c_kyec,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_ase,c_pti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_jcet,c_tongfu,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_ase,c_chipbond,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_himax,c_novatek,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
-c_arm,c_qualcomm,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
-c_arm,c_mediatek,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
-c_arm,c_apple,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
-c_arm,c_nvidia,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
-c_sandisk,t_nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
-c_gigadevice,t_nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,medium
-c_nanya,t_dram,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
-c_arm,c_samsung,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/A5D30993895106F2EDB7BFCBE25A4AF0,low
-c_asml,c_tsmc,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/675F51496F8D503911CF021D02B17E8A,medium
-c_asml,c_samsung,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/675F51496F8D503911CF021D02B17E8A,medium
+co:synopsys,ly:eda,OPERATES_IN,2026-09-13,guide,high
+co:synopsys,cn:us,HQ_IN,2026-09-13,guide,high
+co:cadence,ly:eda,OPERATES_IN,2026-09-13,guide,high
+co:cadence,cn:us,HQ_IN,2026-09-13,guide,high
+co:siemens,ly:eda,OPERATES_IN,2026-09-13,guide,high
+co:siemens,cn:de,HQ_IN,2026-09-13,guide,high
+co:keysight,ly:eda,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:keysight,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:empyrean,ly:eda,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:empyrean,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:silvaco,ly:eda,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:silvaco,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:primarius,ly:eda,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:primarius,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:arm,ly:ip,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:arm,cn:gb,HQ_IN,2026-09-13,claude-knowledge,high
+co:rambus,ly:ip,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:rambus,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:ceva,ly:ip,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:ceva,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:andes,ly:ip,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:andes,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:verisilicon,ly:ip,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:verisilicon,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:arteris,ly:ip,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:arteris,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:asml,ly:equipment,OPERATES_IN,2026-09-13,guide,high
+co:asml,cn:nl,HQ_IN,2026-09-13,guide,high
+co:applied_materials,ly:equipment,OPERATES_IN,2026-09-13,guide,high
+co:applied_materials,cn:us,HQ_IN,2026-09-13,guide,high
+co:lam_research,ly:equipment,OPERATES_IN,2026-09-13,guide,high
+co:lam_research,cn:us,HQ_IN,2026-09-13,guide,high
+co:kla,ly:equipment,OPERATES_IN,2026-09-13,guide,high
+co:kla,cn:us,HQ_IN,2026-09-13,guide,high
+co:tokyo_electron,ly:equipment,OPERATES_IN,2026-09-13,guide,high
+co:tokyo_electron,cn:jp,HQ_IN,2026-09-13,guide,high
+co:asm_international,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:asm_international,cn:nl,HQ_IN,2026-09-13,claude-knowledge,high
+co:advantest,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:advantest,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:teradyne,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:teradyne,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:screen,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:screen,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:nikon,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:nikon,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:canon,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:canon,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:besi,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:besi,cn:nl,HQ_IN,2026-09-13,claude-knowledge,high
+co:onto,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:onto,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:lasertec,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:lasertec,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:disco,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:disco,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:kokusai,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:kokusai,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:hanmi_semi,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hanmi_semi,cn:kr,HQ_IN,2026-09-13,claude-knowledge,high
+co:kulicke_soffa,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:kulicke_soffa,cn:sg,HQ_IN,2026-09-13,claude-knowledge,high
+co:axcelis,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:axcelis,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:veeco,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:veeco,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:formfactor,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:formfactor,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:camtek,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:camtek,cn:il,HQ_IN,2026-09-13,claude-knowledge,high
+co:nova,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:nova,cn:il,HQ_IN,2026-09-13,claude-knowledge,high
+co:aixtron,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:aixtron,cn:de,HQ_IN,2026-09-13,claude-knowledge,high
+co:suss_microtec,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:suss_microtec,cn:de,HQ_IN,2026-09-13,claude-knowledge,high
+co:naura,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:naura,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:amec,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:amec,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:mks,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:mks,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:advanced_energy,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:advanced_energy,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:ichor,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:ichor,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:ultra_clean,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:ultra_clean,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:cohu,ly:equipment,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:cohu,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:shin_etsu,ly:materials,OPERATES_IN,2026-09-13,guide,high
+co:shin_etsu,cn:jp,HQ_IN,2026-09-13,guide,high
+co:sumco,ly:materials,OPERATES_IN,2026-09-13,guide,high
+co:sumco,cn:jp,HQ_IN,2026-09-13,guide,high
+co:globalwafers,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:globalwafers,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:siltronic,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:siltronic,cn:de,HQ_IN,2026-09-13,claude-knowledge,high
+co:soitec,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:soitec,cn:fr,HQ_IN,2026-09-13,claude-knowledge,high
+co:tok,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:tok,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:fujifilm,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:fujifilm,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:sumitomo_chemical,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:sumitomo_chemical,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:resonac,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:resonac,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:hoya,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hoya,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:agc,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:agc,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:ajinomoto,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:ajinomoto,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:photronics,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:photronics,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:entegris,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:entegris,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:qnity,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:qnity,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:merck_kgaa,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:merck_kgaa,cn:de,HQ_IN,2026-09-13,claude-knowledge,high
+co:wacker,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:wacker,cn:de,HQ_IN,2026-09-13,claude-knowledge,high
+co:linde,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:linde,cn:ie,HQ_IN,2026-09-13,claude-knowledge,high
+co:air_products,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:air_products,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:air_liquide,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:air_liquide,cn:fr,HQ_IN,2026-09-13,claude-knowledge,high
+co:coherent,ly:materials,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:coherent,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:tsmc,ly:foundry,OPERATES_IN,2026-09-13,guide,high
+co:tsmc,cn:tw,HQ_IN,2026-09-13,guide,high
+co:umc,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:umc,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:globalfoundries,ly:foundry,OPERATES_IN,2026-09-13,guide,high
+co:globalfoundries,cn:us,HQ_IN,2026-09-13,guide,high
+co:smic,ly:foundry,OPERATES_IN,2026-09-13,guide,high
+co:smic,cn:cn,HQ_IN,2026-09-13,guide,high
+co:tower,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:tower,cn:il,HQ_IN,2026-09-13,claude-knowledge,high
+co:vanguard_intl,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:vanguard_intl,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:psmc,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:psmc,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:hua_hong,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hua_hong,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:db_hitek,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:db_hitek,cn:kr,HQ_IN,2026-09-13,claude-knowledge,high
+co:xfab,ly:foundry,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:xfab,cn:be,HQ_IN,2026-09-13,claude-knowledge,high
+co:samsung,ly:idm,OPERATES_IN,2026-09-13,guide,high
+co:samsung,cn:kr,HQ_IN,2026-09-13,guide,high
+co:intel,ly:idm,OPERATES_IN,2026-09-13,guide,high
+co:intel,cn:us,HQ_IN,2026-09-13,guide,high
+co:texas_instruments,ly:idm,OPERATES_IN,2026-09-13,guide,high
+co:texas_instruments,cn:us,HQ_IN,2026-09-13,guide,high
+co:stmicro,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:stmicro,cn:ch,HQ_IN,2026-09-13,claude-knowledge,high
+co:nxp,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:nxp,cn:nl,HQ_IN,2026-09-13,claude-knowledge,high
+co:infineon,ly:idm,OPERATES_IN,2026-09-13,guide,high
+co:infineon,cn:de,HQ_IN,2026-09-13,guide,high
+co:renesas,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:renesas,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:analog_devices,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:analog_devices,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:microchip,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:microchip,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:onsemi,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:onsemi,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:sony,ly:idm,OPERATES_IN,2026-09-13,guide,high
+co:sony,cn:jp,HQ_IN,2026-09-13,guide,high
+co:rohm,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:rohm,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:wolfspeed,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:wolfspeed,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:skyworks,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:skyworks,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:qorvo,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:qorvo,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:diodes,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:diodes,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:vishay,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:vishay,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:allegro,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:allegro,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:wingtech,ly:idm,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:wingtech,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:sk_hynix,ly:memory,OPERATES_IN,2026-09-13,guide,high
+co:sk_hynix,cn:kr,HQ_IN,2026-09-13,guide,high
+co:micron,ly:memory,OPERATES_IN,2026-09-13,guide,high
+co:micron,cn:us,HQ_IN,2026-09-13,guide,high
+co:kioxia,ly:memory,OPERATES_IN,2026-09-13,guide,high
+co:kioxia,cn:jp,HQ_IN,2026-09-13,guide,high
+co:sandisk,ly:memory,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:sandisk,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:nanya,ly:memory,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:nanya,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:winbond,ly:memory,OPERATES_IN,2026-09-13,guide,high
+co:winbond,cn:tw,HQ_IN,2026-09-13,guide,high
+co:macronix,ly:memory,OPERATES_IN,2026-09-13,guide,high
+co:macronix,cn:tw,HQ_IN,2026-09-13,guide,high
+co:gigadevice,ly:memory,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:gigadevice,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:ase,ly:packaging,OPERATES_IN,2026-09-13,guide,high
+co:ase,cn:tw,HQ_IN,2026-09-13,guide,high
+co:amkor,ly:packaging,OPERATES_IN,2026-09-13,guide,high
+co:amkor,cn:us,HQ_IN,2026-09-13,guide,high
+co:jcet,ly:packaging,OPERATES_IN,2026-09-13,guide,high
+co:jcet,cn:cn,HQ_IN,2026-09-13,guide,high
+co:powertech,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:powertech,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:kyec,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:kyec,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:chipbond,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:chipbond,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:chipmos,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:chipmos,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:tongfu,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:tongfu,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:hua_tian,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hua_tian,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:ibiden,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:ibiden,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:unimicron,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:unimicron,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:kinsus,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:kinsus,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:nanya_pcb,ly:packaging,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:nanya_pcb,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:nvidia,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:nvidia,cn:us,HQ_IN,2026-09-13,guide,high
+co:amd,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:amd,cn:us,HQ_IN,2026-09-13,guide,high
+co:broadcom,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:broadcom,cn:us,HQ_IN,2026-09-13,guide,high
+co:qualcomm,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:qualcomm,cn:us,HQ_IN,2026-09-13,guide,high
+co:marvell,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:marvell,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:mediatek,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:mediatek,cn:tw,HQ_IN,2026-09-13,guide,high
+co:apple,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:apple,cn:us,HQ_IN,2026-09-13,guide,high
+co:realtek,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:realtek,cn:tw,HQ_IN,2026-09-13,guide,high
+co:novatek,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:novatek,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:himax,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:himax,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:lattice,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:lattice,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:astera_labs,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:astera_labs,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:cirrus_logic,ly:fabless,OPERATES_IN,2026-09-13,guide,high
+co:cirrus_logic,cn:us,HQ_IN,2026-09-13,guide,high
+co:credo,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:credo,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:monolithic_power,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:monolithic_power,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:silicon_labs,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:silicon_labs,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:ambarella,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:ambarella,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:semtech,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:semtech,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:macom,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:macom,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:synaptics,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:synaptics,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:power_integrations,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:power_integrations,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:sitime,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:sitime,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:silicon_motion,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:silicon_motion,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:phison,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:phison,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:alchip,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:alchip,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:guc,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:guc,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:aspeed,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:aspeed,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:parade,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:parade,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:socionext,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:socionext,cn:jp,HQ_IN,2026-09-13,claude-knowledge,high
+co:silergy,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:silergy,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:montage,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:montage,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:will_semi,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:will_semi,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:cambricon,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:cambricon,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:hygon,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hygon,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:rockchip,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:rockchip,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:espressif,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:espressif,cn:cn,HQ_IN,2026-09-13,claude-knowledge,high
+co:nordic,ly:fabless,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:nordic,cn:no,HQ_IN,2026-09-13,claude-knowledge,high
+co:microsoft,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:microsoft,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:alphabet,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:alphabet,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:amazon,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:amazon,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:meta,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:meta,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:oracle,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:oracle,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:tesla,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:tesla,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:supermicro,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:supermicro,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:dell,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:dell,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:hpe,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hpe,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:cisco,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:cisco,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:arista,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:arista,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:coreweave,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:coreweave,cn:us,HQ_IN,2026-09-13,claude-knowledge,high
+co:western_digital,ly:enddemand,OPERATES_IN,2026-09-13,guide,high
+co:western_digital,cn:us,HQ_IN,2026-09-13,guide,high
+co:seagate,ly:enddemand,OPERATES_IN,2026-09-13,guide,high
+co:seagate,cn:us,HQ_IN,2026-09-13,guide,high
+co:pure_storage,ly:enddemand,OPERATES_IN,2026-09-13,guide,high
+co:pure_storage,cn:us,HQ_IN,2026-09-13,guide,high
+co:hon_hai,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:hon_hai,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:quanta,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:quanta,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:wiwynn,ly:enddemand,OPERATES_IN,2026-09-13,claude-knowledge,high
+co:wiwynn,cn:tw,HQ_IN,2026-09-13,claude-knowledge,high
+co:asml,cp:euv_lithography,CONTROLS,2026-04-01,guide,high
+co:tsmc,cp:advanced_foundry,CONTROLS,2026-04-01,guide,high
+co:cadence,cp:eda_software,CONTROLS,2026-04-01,guide,high
+co:synopsys,cp:eda_software,CONTROLS,2026-04-01,guide,high
+co:sk_hynix,cp:hbm_memory,CONTROLS,2026-04-01,guide,high
+co:ase,cp:advanced_packaging,CONTROLS,2026-04-01,guide,medium
+co:tsmc,cp:advanced_packaging,CONTROLS,2026-04-01,guide,medium
+co:tsmc,te:euv,DEPENDS_ON,2026-04-01,guide,high
+co:samsung,te:euv,DEPENDS_ON,2026-04-01,guide,medium
+co:intel,te:euv,DEPENDS_ON,2026-04-01,guide,medium
+co:nvidia,te:hbm,DEPENDS_ON,2026-04-01,guide,high
+co:sk_hynix,te:hbm,DEPENDS_ON,2026-04-01,guide,high
+co:micron,te:hbm,DEPENDS_ON,2026-04-01,guide,high
+co:samsung,te:hbm,DEPENDS_ON,2026-04-01,guide,medium
+co:tsmc,co:nvidia,SUPPLIES,2026-04-01,guide,high
+co:tsmc,co:amd,SUPPLIES,2026-04-01,guide,high
+co:tsmc,co:apple,SUPPLIES,2026-04-01,guide,high
+co:tsmc,co:qualcomm,SUPPLIES,2026-04-01,guide,high
+co:samsung,co:qualcomm,SUPPLIES,2026-04-01,guide,medium
+co:tsmc,co:broadcom,SUPPLIES,2026-04-01,guide,high
+co:tsmc,co:mediatek,SUPPLIES,2026-04-01,guide,high
+co:sk_hynix,co:nvidia,SUPPLIES,2026-04-01,guide,high
+co:micron,co:nvidia,SUPPLIES,2026-04-01,guide,high
+co:amd,co:intel,COMPETES_WITH,2026-04-01,guide,medium
+co:amd,co:nvidia,COMPETES_WITH,2026-04-01,guide,medium
+co:applied_materials,co:lam_research,COMPETES_WITH,2026-04-01,guide,medium
+co:amkor,co:ase,COMPETES_WITH,2026-04-01,guide,high
+co:cadence,co:synopsys,COMPETES_WITH,2026-04-01,guide,high
+co:micron,co:samsung,COMPETES_WITH,2026-04-01,guide,high
+co:micron,co:sk_hynix,COMPETES_WITH,2026-04-01,guide,high
+co:samsung,co:sk_hynix,COMPETES_WITH,2026-04-01,guide,high
+co:samsung,co:tsmc,COMPETES_WITH,2026-04-01,guide,medium
+co:seagate,co:western_digital,COMPETES_WITH,2026-04-01,guide,medium
+co:shin_etsu,cp:silicon_wafers,CONTROLS,2026-04-01,guide,high
+co:sumco,cp:silicon_wafers,CONTROLS,2026-04-01,guide,high
+co:globalwafers,cp:silicon_wafers,CONTROLS,2026-09-13,bigdata.com / industry knowledge,medium
+co:shin_etsu,cp:photoresist,CONTROLS,2026-04-01,guide,high
+co:tok,cp:photoresist,CONTROLS,2026-04-01,guide,high
+co:globalfoundries,co:umc,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:tsmc,co:umc,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:globalfoundries,co:tower,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:infineon,co:stmicro,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:stmicro,co:texas_instruments,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:infineon,co:nxp,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:analog_devices,co:texas_instruments,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:infineon,co:renesas,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:microchip,co:texas_instruments,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:broadcom,co:marvell,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:amd,co:lattice,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:intel,co:lattice,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:globalwafers,co:shin_etsu,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:globalwafers,co:sumco,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:advantest,co:teradyne,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:asml,co:nikon,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:applied_materials,co:asm_international,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:kla,co:onto,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:micron,co:sandisk,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:sandisk,co:sk_hynix,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:kioxia,co:sandisk,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:micron,co:nanya,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:gigadevice,co:winbond,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:gigadevice,co:macronix,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:ase,co:kyec,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:ase,co:powertech,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:jcet,co:tongfu,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:ase,co:chipbond,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:himax,co:novatek,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+co:arm,co:qualcomm,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+co:arm,co:mediatek,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+co:arm,co:apple,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+co:arm,co:nvidia,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+co:sandisk,te:nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
+co:gigadevice,te:nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,medium
+co:nanya,te:dram,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
+co:arm,co:samsung,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/A5D30993895106F2EDB7BFCBE25A4AF0,low
+co:asml,co:tsmc,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/675F51496F8D503911CF021D02B17E8A,medium
+co:asml,co:samsung,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/675F51496F8D503911CF021D02B17E8A,medium
+co:asml,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:asml,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:asml,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:applied_materials,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:applied_materials,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:applied_materials,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lam_research,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lam_research,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lam_research,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lam_research,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kla,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kla,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kla,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tokyo_electron,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tokyo_electron,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tokyo_electron,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:asm_international,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:asm_international,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:advantest,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:advantest,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:advantest,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:teradyne,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:teradyne,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:screen,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:screen,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nikon,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:besi,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:besi,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:onto,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lasertec,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lasertec,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lasertec,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lasertec,co:hoya,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:lasertec,co:agc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:disco,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:disco,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:disco,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kokusai,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kokusai,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hanmi_semi,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hanmi_semi,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kulicke_soffa,co:ase,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kulicke_soffa,co:amkor,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:veeco,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:formfactor,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:formfactor,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:formfactor,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:camtek,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:camtek,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nova,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nova,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aixtron,co:infineon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aixtron,co:wolfspeed,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:naura,co:smic,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:naura,co:hua_hong,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amec,co:smic,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amec,co:hua_hong,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:mks,co:applied_materials,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:mks,co:lam_research,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:advanced_energy,co:applied_materials,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:advanced_energy,co:lam_research,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ichor,co:lam_research,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ichor,co:applied_materials,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ultra_clean,co:lam_research,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ultra_clean,co:applied_materials,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sumco,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sumco,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sumco,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sumco,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:globalwafers,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:globalwafers,co:umc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:globalwafers,co:globalfoundries,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:siltronic,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:siltronic,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:soitec,co:globalfoundries,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:soitec,co:stmicro,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tok,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tok,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tok,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:fujifilm,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:fujifilm,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sumitomo_chemical,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:resonac,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:resonac,co:ase,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hoya,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hoya,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hoya,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:agc,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:agc,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ajinomoto,co:ibiden,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ajinomoto,co:unimicron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ajinomoto,co:kinsus,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ajinomoto,co:nanya_pcb,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:photronics,co:umc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:photronics,co:smic,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:photronics,co:globalfoundries,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:entegris,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:entegris,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:entegris,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qnity,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qnity,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qnity,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:merck_kgaa,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:merck_kgaa,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:wacker,co:shin_etsu,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:wacker,co:sumco,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:wacker,co:siltronic,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:wacker,co:globalwafers,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:linde,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:linde,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:linde,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:air_products,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:air_products,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:air_products,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:air_liquide,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:air_liquide,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:coherent,co:infineon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:marvell,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:astera_labs,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:alchip,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:guc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:nxp,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:analog_devices,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:ambarella,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tsmc,co:socionext,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:umc,co:mediatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:umc,co:realtek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:umc,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:umc,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:umc,co:infineon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:globalfoundries,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:globalfoundries,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:globalfoundries,co:nxp,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:smic,co:gigadevice,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:smic,co:cambricon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tower,co:broadcom,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tower,co:skyworks,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tower,co:qorvo,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:vanguard_intl,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:vanguard_intl,co:himax,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:vanguard_intl,co:nxp,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:psmc,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hua_hong,co:gigadevice,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:samsung,co:tesla,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:samsung,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:samsung,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:samsung,co:ambarella,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sk_hynix,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sk_hynix,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:micron,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:micron,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:micron,co:pure_storage,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kioxia,co:pure_storage,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kioxia,co:phison,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:arm,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:arm,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:rambus,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:rambus,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:rambus,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:arteris,co:nxp,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:arteris,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:synopsys,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:synopsys,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:synopsys,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:synopsys,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:synopsys,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:synopsys,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:cadence,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:cadence,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:cadence,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:cadence,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:cadence,co:mediatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:siemens,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:siemens,co:tsmc,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:keysight,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:empyrean,co:smic,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:empyrean,co:hua_hong,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:primarius,co:smic,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ase,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ase,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ase,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ase,co:mediatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ase,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amkor,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amkor,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amkor,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amkor,co:infineon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:jcet,co:qualcomm,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:powertech,co:kioxia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:powertech,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:powertech,co:nanya,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kyec,co:mediatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kyec,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kyec,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:chipbond,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:chipbond,co:himax,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:chipmos,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:chipmos,co:novatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:tongfu,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ibiden,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ibiden,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:ibiden,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:unimicron,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:unimicron,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:unimicron,co:intel,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kinsus,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:kinsus,co:mediatek,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nanya_pcb,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nanya_pcb,co:amd,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:alphabet,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:oracle,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:coreweave,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:supermicro,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:dell,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:hpe,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:tesla,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nvidia,co:hon_hai,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amd,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amd,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amd,co:oracle,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amd,co:dell,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amd,co:hpe,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:amd,co:supermicro,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:broadcom,co:alphabet,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:broadcom,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:broadcom,co:arista,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:broadcom,co:cisco,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:broadcom,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:marvell,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:marvell,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qualcomm,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qualcomm,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:mediatek,co:alphabet,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:mediatek,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:astera_labs,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:astera_labs,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:cirrus_logic,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:credo,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:credo,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:monolithic_power,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sitime,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aspeed,co:supermicro,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aspeed,co:dell,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aspeed,co:hpe,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aspeed,co:quanta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:aspeed,co:wiwynn,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:alchip,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:silicon_motion,co:kioxia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:silicon_motion,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:intel,co:dell,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:intel,co:hpe,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:intel,co:supermicro,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:intel,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:sony,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:skyworks,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:skyworks,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qorvo,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:qorvo,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:texas_instruments,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:stmicro,co:tesla,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:stmicro,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:nxp,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:onsemi,co:tesla,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:montage,co:samsung,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:montage,co:sk_hynix,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:montage,co:micron,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hon_hai,co:apple,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hon_hai,co:nvidia,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hon_hai,co:dell,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:hon_hai,co:hpe,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:quanta,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:quanta,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:quanta,co:amazon,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:wiwynn,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:wiwynn,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:arista,co:microsoft,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:arista,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:pure_storage,co:meta,SUPPLIES,2026-09-13,claude-knowledge,medium
+co:siemens,co:synopsys,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:cadence,co:siemens,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:empyrean,co:primarius,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:andes,co:arm,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:asml,co:canon,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:canon,co:nikon,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:applied_materials,co:tokyo_electron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:lam_research,co:tokyo_electron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kla,co:nova,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:camtek,co:onto,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:advantest,co:cohu,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:cohu,co:teradyne,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:besi,co:hanmi_semi,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:besi,co:kulicke_soffa,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:applied_materials,co:axcelis,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kokusai,co:tokyo_electron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:asm_international,co:kokusai,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:screen,co:tokyo_electron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:advanced_energy,co:mks,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:ichor,co:ultra_clean,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:amec,co:naura,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:aixtron,co:veeco,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:sumco,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:siltronic,co:sumco,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:globalwafers,co:siltronic,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:siltronic,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:fujifilm,co:tok,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:shin_etsu,co:tok,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:sumitomo_chemical,co:tok,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:agc,co:hoya,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:air_products,co:linde,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:air_liquide,co:linde,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:air_liquide,co:air_products,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:entegris,co:qnity,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:entegris,co:merck_kgaa,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:qnity,co:resonac,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:coherent,co:wolfspeed,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:intel,co:tsmc,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:intel,co:samsung,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:umc,co:vanguard_intl,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:psmc,co:umc,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:smic,co:umc,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:hua_hong,co:umc,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:hua_hong,co:smic,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:tower,co:xfab,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:db_hitek,co:tower,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:psmc,co:vanguard_intl,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:infineon,co:onsemi,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:infineon,co:wolfspeed,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:infineon,co:rohm,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:onsemi,co:stmicro,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:onsemi,co:wolfspeed,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:rohm,co:wolfspeed,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:qorvo,co:skyworks,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:diodes,co:vishay,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:diodes,co:wingtech,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:microchip,co:renesas,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:microchip,co:stmicro,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:nxp,co:renesas,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:nxp,co:stmicro,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:sony,co:will_semi,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:samsung,co:sony,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kioxia,co:micron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kioxia,co:samsung,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kioxia,co:sk_hynix,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:nanya,co:winbond,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:macronix,co:winbond,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:phison,co:silicon_motion,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:montage,co:rambus,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:ase,co:jcet,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:amkor,co:jcet,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:jcet,co:hua_tian,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:hua_tian,co:tongfu,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:chipmos,co:powertech,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:chipbond,co:chipmos,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:ibiden,co:unimicron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kinsus,co:unimicron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:nanya_pcb,co:unimicron,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:ibiden,co:nanya_pcb,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:kinsus,co:nanya_pcb,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:broadcom,co:nvidia,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:mediatek,co:qualcomm,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:cambricon,co:nvidia,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:amd,co:hygon,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:hygon,co:intel,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:astera_labs,co:credo,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:astera_labs,co:marvell,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:credo,co:marvell,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:nordic,co:silicon_labs,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:espressif,co:silicon_labs,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:espressif,co:nordic,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:monolithic_power,co:texas_instruments,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:infineon,co:monolithic_power,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:alchip,co:guc,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:alchip,co:broadcom,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:alchip,co:marvell,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:alchip,co:socionext,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:macom,co:semtech,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:monolithic_power,co:silergy,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:mediatek,co:rockchip,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:amazon,co:microsoft,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:alphabet,co:microsoft,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:alphabet,co:amazon,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:amazon,co:oracle,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:microsoft,co:oracle,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:dell,co:supermicro,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:hpe,co:supermicro,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:dell,co:hpe,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:quanta,co:wiwynn,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:hon_hai,co:quanta,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:arista,co:cisco,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:dell,co:pure_storage,COMPETES_WITH,2026-09-13,claude-knowledge,medium
+co:sk_hynix,te:euv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:micron,te:euv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:lasertec,te:euv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:hoya,te:euv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:agc,te:euv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:tok,te:euv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:amd,te:hbm,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:broadcom,te:hbm,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:hanmi_semi,te:hbm,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:besi,te:hybrid_bonding,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:nvidia,te:cowos,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:amd,te:cowos,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:broadcom,te:cowos,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:tsmc,te:gaa,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:samsung,te:gaa,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:intel,te:gaa,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:nikon,te:duv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:canon,te:duv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:umc,te:duv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:smic,te:duv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:globalfoundries,te:duv,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:sk_hynix,te:dram,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:samsung,te:dram,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:micron,te:dram,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:winbond,te:dram,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:kioxia,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:micron,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:sk_hynix,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:samsung,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:silicon_motion,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:phison,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:pure_storage,te:nand,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:macronix,te:nor_flash,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:winbond,te:nor_flash,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:gigadevice,te:nor_flash,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:wolfspeed,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:infineon,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:onsemi,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:stmicro,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:rohm,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:coherent,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:aixtron,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:tesla,te:silicon_carbide,DEPENDS_ON,2026-09-13,claude-knowledge,medium
+co:lasertec,cp:euv_mask_inspection,CONTROLS,2026-09-13,claude-knowledge,medium
+co:hoya,cp:euv_mask_blanks,CONTROLS,2026-09-13,claude-knowledge,medium
+co:agc,cp:euv_mask_blanks,CONTROLS,2026-09-13,claude-knowledge,medium
+co:ajinomoto,cp:abf_substrate_film,CONTROLS,2026-09-13,claude-knowledge,medium
+co:micron,cp:hbm_memory,CONTROLS,2026-09-13,claude-knowledge,medium
+co:samsung,cp:hbm_memory,CONTROLS,2026-09-13,claude-knowledge,medium
+co:samsung,cp:advanced_foundry,CONTROLS,2026-09-13,claude-knowledge,medium

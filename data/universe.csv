@@ -54,7 +54,7 @@ co:fujifilm,Fujifilm Holdings,4901.T,TSE,JP,Materials,3,false,https://finance.ya
 co:sumitomo_chemical,Sumitomo Chemical,4005.T,TSE,JP,Materials,3,false,https://finance.yahoo.com/quote/4005.T
 co:resonac,Resonac Holdings,4004.T,TSE,JP,Materials,3,false,https://finance.yahoo.com/quote/4004.T
 co:hoya,HOYA,7741.T,TSE,JP,Materials,1,true,https://finance.yahoo.com/quote/7741.T
-co:agc,AGC,5201.T,TSE,JP,Materials,2,false,https://finance.yahoo.com/quote/5201.T
+co:agc,AGC,5201.T,TSE,JP,Materials,2,true,https://finance.yahoo.com/quote/5201.T
 co:ajinomoto,Ajinomoto,2802.T,TSE,JP,Materials,1,true,https://finance.yahoo.com/quote/2802.T
 co:photronics,Photronics,PLAB,NASDAQ,US,Materials,3,false,https://finance.yahoo.com/quote/PLAB
 co:entegris,Entegris,ENTG,NASDAQ,US,Materials,2,false,https://finance.yahoo.com/quote/ENTG
