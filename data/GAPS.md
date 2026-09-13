@@ -1,24 +1,89 @@
-# Gaps and judgment calls — Task 2 (v1, from Chip War Essential Guide only)
+# Gaps and judgment calls
 
-## 1. Node count is well short of the 150+ target
-The guide is a curated investor digest, not a company directory. It names
-about 44 distinct companies with enough detail to seed a node. Total graph:
-44 Companies + 10 Layers + 7 Countries + 6 Technologies + 7 Chokepoints = 74
-nodes. Hitting 150+ from this source alone would mean inventing companies or
-relationships it doesn't state — against the "do not scrape third-party
-sites to fill gaps" rule. Options: (a) accept ~74 as the v1 graph and grow it
-edge-by-edge in Post 2 via `propose_updates.py` / real news, per the series'
-existing add-only pattern; (b) approve a second source document (the
-Quantum_Race or Rare_Earths essential guides also sit in Downloads, but
-CLAUDE.md names only the Chip War guide as source — needs your sign-off to
-add another); (c) raise the target's expectation in CLAUDE.md/PLAN.md. Not
-decided — needs your call before Task 3.
+## v2 (2026-09-13): expanded via Bigdata.com beyond the Essential Guide
 
-## 2. IP layer has zero companies
+Author approved a second source for this round: the Bigdata.com company/
+security data connected in this session, used to (a) verify every ticker
+below flagged as shaky in v1 and (b) add 49 companies + 3 countries the
+guide never names, concentrated in layers the guide barely touches (IP went
+from 0 to 7 companies; every layer now has 5+). This is a real change to
+CLAUDE.md's "Chip War Essential Guide is the source" rule, done with
+sign-off, not silently.
+
+**How the two sources are distinguished in the data:** every guide-sourced
+edge keeps `source: essential-guide`, `as_of: 2026-04-01`. Every
+Bigdata-sourced edge added this round uses `source: "bigdata.com company
+profile"` (for OPERATES_IN/HQ_IN — objective, verified facts) or `source:
+"bigdata.com / industry knowledge"` (for SUPPLIES/COMPETES_WITH/DEPENDS_ON —
+well-known industry relationships I did not pull a specific filing citation
+for), `as_of: 2026-09-13`, confidence `medium` throughout (never `high`,
+since none of these have a specific filing/earnings-call citation behind
+them yet). **Treat every "bigdata.com / industry knowledge" edge as a TODO
+to backfill with a real source** before leaning on it for a public claim —
+same spirit as the 7 pre-existing `source: TODO` edges in the old vault
+version of this project.
+
+New totals: 126 nodes (93 Companies, 10 Layers, 10 Countries, 6
+Technologies, 7 Chokepoints), 264 edges. `validate.py` exits 0. Live Aura
+counts reconfirmed via MCP: 126 nodes / 264 edges, matching exactly.
+
+**Verification caught two real, useful corrections** (worth knowing for
+Post 2/3 "what the graph got wrong" content):
+- **JSR Corporation** — v1 flagged suspicion it had gone private in 2024.
+  Confirmed via Bigdata: acquired by Japan Investment Corporation (JICC-02)
+  April 2024, delisted from TSE October 2024. Node corrected: `listed:
+  false`, ticker/exchange cleared. The guide-sourced OPERATES_IN/HQ_IN/
+  CONTROLS facts about JSR (Materials, Japan, photoresist) are unaffected.
+- **Two real Stage-5-Materials CONTROLS edges were missing from v1**: the
+  guide's own table names Shin-Etsu+SUMCO for Silicon Wafers and
+  Shin-Etsu+JSR+TOK for Photoresist (docx lines ~340-352), but v1 never
+  turned that into CONTROLS edges (see old item 6 below, now resolved for
+  the guide-sourced companies). Added as `essential-guide`/`high`. Also
+  added GlobalWafers → Silicon Wafers at `bigdata.com`/`medium` since it's
+  a real top-3 global wafer maker not mentioned in the guide.
+
+**Dropped candidates, in case worth a second try:**
+- **Alphawave IP Group** (would have been an IP-layer add) — Qualcomm
+  acquired it in December 2025 and it delisted from the LSE (continues
+  trading OTC as AWEVF). Excluded rather than added with an ambiguous
+  "independent public company" status; the acquisition itself is good real
+  material for a future Post 2 "real news → edge diff" demo.
+- **Vanguard International Semiconductor (VIS)** and **Will Semiconductor**
+  (Shanghai, image sensors) — considered for Foundry/Fabless respectively
+  but `find_securities` didn't resolve them under the query terms tried this
+  session. Worth retrying with a ticker-based lookup (VIS trades as 5347 on
+  TPEx; Will Semiconductor as 603501.SS) rather than name search.
+- Renesas Electronics was originally NEC Electronics's chip business, and
+  Tongfu Microelectronics was originally "Nantong Fujitsu Microelectronics"
+  — a nice historical echo of the guide's Ch.6 Japan-DRAM-era names (NEC,
+  Fujitsu), but the ontology has no acquired-by/formerly-part-of
+  relationship type to capture it. Ask before adding one if this matters for
+  Post 2 narrative.
+- STMicroelectronics's HQ is genuinely ambiguous (legally incorporated in
+  the Netherlands, corporate offices in Geneva, major fabs in France/Italy).
+  Used Bigdata's registered-entity country (Netherlands) for consistency
+  with how ASML/NXP are already modeled, but flag if you'd rather use
+  Geneva/Switzerland.
+- The EndDemand layer's 5 new hyperscaler/OEM additions (Microsoft,
+  Alphabet, Amazon.com, Meta Platforms, Super Micro Computer) got `tier: 3`
+  as a placeholder — see item 5 below, the tier rubric doesn't cleanly apply
+  to demand-side companies at all, new or old.
+
+**Original 44-company node count is well short of the abandoned 150+ target,
+even now at 93** — the guide names about 44 companies with enough detail to
+seed a node; Bigdata verification added the other 49. Going further would
+mean either more Bigdata-sourced additions (same medium-confidence pattern)
+or another explicit source document. Not pursued further this round; treat
+93 companies / 126 nodes as the v2 baseline and keep growing it edge-by-edge
+in Post 2 via real news, per the series' existing add-only pattern.
+
+## Original Task 2 gaps (v1, from Chip War Essential Guide only)
+
+## 2. IP layer has zero companies — RESOLVED in v2 above
 The guide never discusses chip IP licensing (e.g. Arm, Synopsys DesignWare,
-CEVA) — it's outside its memory/storage-investor scope. The `IP` layer
-exists in the ontology but is currently empty. Flagging rather than
-inventing a company for it.
+CEVA) — it's outside its memory/storage-investor scope. Filled via Bigdata.com
+in the v2 round above (Arm Holdings, CEVA, Rambus, Imagination Technologies,
+Andes Technology, VeriSilicon, SiFive — 7 companies).
 
 ## 3. Tickers and exchanges are not in the guide
 The guide states tickers only for the four portfolio names (MU, STX, WDC,
@@ -29,9 +94,8 @@ tickers are stable public facts, not judgment calls — but it's a deviation
 from "the guide is the source" as literally written, so flagging it
 explicitly. A few are lower-confidence and should be double-checked before
 publishing:
-- **JSR Corporation** (`c_jsr`) — I believe JSR went private in 2024 via a
-  JIC-backed tender offer and may no longer trade as 4185.T. Marked
-  `listed: true` provisionally; verify before use.
+- **JSR Corporation** (`c_jsr`) — CONFIRMED in the v2 round above: went
+  private in 2024, delisted, node corrected to `listed: false`.
 - **Kioxia** (`c_kioxia`) — IPO'd on TSE in December 2024; ticker `285A.T`
   is from memory, not independently verified here.
 - **ASE Technology** (`c_ase`) — used the NYSE ADR ticker `ASX`; it also
@@ -79,13 +143,14 @@ chokepoint control. Calls that most need your review:
 - SMIC → Tier 3 despite strategic importance to China's self-sufficiency
   push, because globally it remains sanctions-limited and trailing-edge.
 
-## 6. CONTROLS edges skipped for split chokepoints
+## 6. CONTROLS edges skipped for split chokepoints — RESOLVED in v2 above
 Silicon Wafers (Shin-Etsu + SUMCO, "Japan: 75%") and Photoresist (JSR + TOK +
-Shin-Etsu, "Japan: 90%+") are given as country-level shares in the guide,
-without a per-company split. Rather than guess an individual company's
-share, I left these two Chokepoint nodes without a `CONTROLS` edge. They
-still exist as nodes (referenced by the Materials layer) — add the edges
-once you have (or want to assert) a company-level split.
+Shin-Etsu, "Japan: 90%+") are given as country-level shares in the guide, but
+the guide's own Stage 5 table (docx lines ~340-352) does name these specific
+companies per material — re-reading it during the v2 round, that's a
+per-company list, not a guess. Added as `essential-guide`/`high` CONTROLS
+edges. Note this still isn't a *share* split (i.e. we don't know Shin-Etsu's
+75% vs SUMCO's remainder) — only that both are named controllers.
 
 ## 7. Ownership relationships not modeled
 Real-world ASML holds a minority stake in Zeiss SMT, and Cymer has been a
@@ -95,9 +160,11 @@ anyway. Both are modeled here as independent Companies with a plain
 `SUPPLIES` edge into ASML, which understates how integrated they actually
 are. Flagging in case that matters for the tier-1 chokepoint framing.
 
-## 8. DRAM / NAND / NOR Flash Technology nodes are unconnected
-Created per the ontology's Technology label, but no company has an explicit
-`DEPENDS_ON` edge to them yet — the guide describes who *makes* these
-(that's the Memory/IDM layer), not who structurally depends on them the way
-GPUs explicitly depend on HBM. Leaving them node-only until a real
-dependency claim is sourced.
+## 8. DRAM / NAND Technology nodes — partially connected in v2
+v1 created these per the ontology's Technology label with no `DEPENDS_ON`
+edges (the guide describes who *makes* DRAM/NAND, not who structurally
+depends on it the way GPUs explicitly depend on HBM). The v2 round added
+three: SanDisk/GigaDevice → NAND, Nanya → DRAM (their whole business
+depends on that technology, which is a defensible "depends on" reading).
+`NOR Flash` is still unconnected — no company got a NOR-specific edge this
+round even though Winbond/Macronix/GigaDevice all make it; add if useful.

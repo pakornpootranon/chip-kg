@@ -122,3 +122,144 @@ c_micron,c_sk_hynix,COMPETES_WITH,2026-04-01,essential-guide,high
 c_samsung,c_sk_hynix,COMPETES_WITH,2026-04-01,essential-guide,high
 c_samsung,c_tsmc,COMPETES_WITH,2026-04-01,essential-guide,medium
 c_seagate,c_wdc,COMPETES_WITH,2026-04-01,essential-guide,medium
+c_keysight,l_eda,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_keysight,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_empyrean,l_eda,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_empyrean,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_silvaco,l_eda,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_silvaco,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_arm,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_arm,co_gb,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_ceva,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_ceva,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_rambus,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_rambus,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_imagination,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_imagination,co_gb,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_andes,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_andes,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_verisilicon,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_verisilicon,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_sifive,l_ip,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_sifive,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_asm_intl,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_asm_intl,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_advantest,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_advantest,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_teradyne,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_teradyne,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_nikon,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_nikon,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_canon,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_canon,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_screen_holdings,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_screen_holdings,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_besi,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_besi,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_onto,l_equipment,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_onto,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_globalwafers,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_globalwafers,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_entegris,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_entegris,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_resonac,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_resonac,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_fujifilm,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_fujifilm,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_sumitomo_chemical,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_sumitomo_chemical,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_air_products,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_air_products,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_linde,l_materials,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_linde,co_ie,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_umc,l_foundry,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_umc,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_tower_semi,l_foundry,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_tower_semi,co_il,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_stmicro,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_stmicro,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_nxp,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_nxp,co_nl,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_adi,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_adi,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_renesas,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_renesas,co_jp,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_microchip,l_idm,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_microchip,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_sandisk,l_memory,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_sandisk,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_nanya,l_memory,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_nanya,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_gigadevice,l_memory,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_gigadevice,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_pti,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_pti,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_kyec,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_kyec,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_tongfu,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_tongfu,co_cn,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_chipbond,l_packaging,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_chipbond,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_marvell,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_marvell,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_lattice,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_lattice,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_astera_labs,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_astera_labs,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_novatek,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_novatek,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_himax,l_fabless,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_himax,co_tw,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_microsoft,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_microsoft,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_alphabet,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_alphabet,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_amazon,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_amazon,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_meta,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_meta,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_supermicro,l_enddemand,OPERATES_IN,2026-09-13,bigdata.com company profile,medium
+c_supermicro,co_us,HQ_IN,2026-09-13,bigdata.com company profile,medium
+c_shin_etsu,ch_silicon_wafers,CONTROLS,2026-04-01,essential-guide,high
+c_sumco,ch_silicon_wafers,CONTROLS,2026-04-01,essential-guide,high
+c_globalwafers,ch_silicon_wafers,CONTROLS,2026-09-13,bigdata.com / industry knowledge,medium
+c_shin_etsu,ch_photoresist,CONTROLS,2026-04-01,essential-guide,high
+c_jsr,ch_photoresist,CONTROLS,2026-04-01,essential-guide,high
+c_tok,ch_photoresist,CONTROLS,2026-04-01,essential-guide,high
+c_globalfoundries,c_umc,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_tsmc,c_umc,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_globalfoundries,c_tower_semi,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_infineon,c_stmicro,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_stmicro,c_ti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_infineon,c_nxp,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_adi,c_ti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_infineon,c_renesas,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_microchip,c_ti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_broadcom,c_marvell,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_amd,c_lattice,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_intel,c_lattice,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_andes,c_sifive,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_globalwafers,c_shin_etsu,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_globalwafers,c_sumco,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_advantest,c_teradyne,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_asml,c_nikon,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_applied_materials,c_asm_intl,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_kla,c_onto,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_micron,c_sandisk,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_sandisk,c_sk_hynix,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_kioxia,c_sandisk,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_micron,c_nanya,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_gigadevice,c_winbond,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_gigadevice,c_macronix,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_ase,c_kyec,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_ase,c_pti,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_jcet,c_tongfu,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_ase,c_chipbond,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_himax,c_novatek,COMPETES_WITH,2026-09-13,bigdata.com / industry knowledge,medium
+c_arm,c_qualcomm,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+c_arm,c_mediatek,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+c_arm,c_apple,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+c_arm,c_nvidia,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
+c_sandisk,t_nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
+c_gigadevice,t_nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,medium
+c_nanya,t_dram,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
