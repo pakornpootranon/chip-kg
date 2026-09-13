@@ -1,5 +1,23 @@
 # Gaps and judgment calls
 
+## Task 2 notes (2026-09-13): universe.csv, for Pootranon's review
+
+Dropped from v1 because they are not listed: Zeiss SMT (Carl Zeiss AG is private), Cymer (ASML subsidiary), JSR (taken private by JIC in 2024), YMTC, Huawei/HiSilicon, Imagination Technologies, SiFive. Their supply relationships can still appear in descriptions but they get no node.
+
+Not added although relevant, because not listed or no longer listed: CXMT (private, Bigdata.com confirms), SK Siltron (private), Shinko Electric (taken private 2025), Ansys (bought by Synopsys 2025), Alphawave (bought by Qualcomm 2025), Toshiba (delisted 2023).
+
+Tickers moved from US ADRs to the primary local listing, per the CLAUDE.md ticker rule: TSMC 2330.TW (was TSM), ASE 3711.TW (was ASX), UMC 2303.TW (was UMC), Sony 6758.T (was SONY), STMicro STMPA.PA (was STM). ASML stays bare per the CLAUDE.md example. Himax and Silicon Motion keep their NASDAQ tickers because they have no local listing.
+
+Layer changes from v1: Micron moved IDM to Memory. Cirrus Logic moved IDM to Fabless (it owns no fabs). Silicon Labs, Silicon Motion, Phison and Montage are Fabless (chip designers) even though two of them sell memory controllers. Photronics, HOYA and AGC sit in Materials (photomasks and mask blanks). Ibiden and Unimicron sit in Packaging (IC substrates).
+
+Country judgment calls: STMicro CH (Geneva head office; incorporated in NL). Silergy CN (Hangzhou operations; Cayman incorporated, Taiwan listed). Kulicke & Soffa SG (Singapore head office; US incorporated). Linde IE (Irish incorporation; UK head office). X-FAB BE. Wingtech CN (parent of Nexperia, whose control is disputed with the Dutch government since late 2025).
+
+Tier calls that need a look: Lasertec Tier 1 with chokepoint true (sole supplier of actinic EUV mask inspection). HOYA Tier 1 with chokepoint true and Ajinomoto Tier 1 with chokepoint true (EUV mask blanks duopoly with AGC; ABF substrate film near-monopoly). DISCO Tier 1, chokepoint false (about 80 percent of dicing and grinding, but Tier 1 by the one-or-two-competitors rule). Western Digital and Seagate keep v1's Tier 1 but that looks generous for a three-player hard-drive market; Tier 2 may fit better. Hanmi Semiconductor Tier 2 (HBM thermal-compression bonders). Every hyperscaler and server maker in EndDemand is Tier 3 by default, as in v1.
+
+Vanguard International Semiconductor 5347.TWO could not be resolved by Bigdata.com find_securities; the ticker is from knowledge and should be checked once in Aura or Yahoo.
+
+The universe is 171 names. That is larger than the 100 minimum on purpose; trim in the review if the Task 3 enrichment load (batches of 20 per session) is too heavy.
+
 ## v5 (2026-09-13): Hermes path dropped
 
 The Hermes follower path described in v4 below was abandoned the same day and

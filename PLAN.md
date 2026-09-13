@@ -34,9 +34,9 @@ Done when: tree matches CLAUDE.md and constraints run clean on Aura via MCP. Don
 
 ## Task 2: Company universe (100+)
 
-- [ ] Read `data/universe.csv` if Pootranon has supplied it (preferred; built outside this session from his picks, the guide, and an S&P Global screen). If absent, extract every listed company from `source/guide.md` with layer and tier, then fill to 100 with at most one web search per missing company
-- [ ] Ensure columns: `id, name, ticker, exchange, country, layer, tier, chokepoint, source`
-- [ ] Print counts per layer, per country, per tier
+- [x] Read `data/universe.csv` if Pootranon has supplied it (preferred; built outside this session from his picks, the guide, and an S&P Global screen). If absent, extract every listed company from `source/guide.md` with layer and tier, then fill to 100 with at most one web search per missing company. Done 2026-09-13: not supplied, so built by `scripts/build_universe.py` (the curated list lives in that script; re-run it after editing). 86 listed names carried over from v1 (7 unlisted v1 names dropped: Zeiss SMT, Cymer, JSR, YMTC, Huawei/HiSilicon, Imagination, SiFive) plus 85 additions. No web searches used; 21 less-certain tickers verified through Bigdata.com find_securities instead, the rest from the author's and Claude's knowledge. See `data/GAPS.md` Task 2 notes for every judgment call
+- [x] Ensure columns: `id, name, ticker, exchange, country, layer, tier, chokepoint, source`. Ids use the CLAUDE.md `co:` prefix; v1 `c_` ids are migrated in Task 3 when nodes.csv and edges.csv are rewritten
+- [x] Print counts per layer, per country, per tier: 171 companies. EDA 7, IP 6, Equipment 32, Materials 21, Foundry 10, IDM 19, Memory 8, Packaging 13, Fabless 37, EndDemand 18. US 73, TW 30, JP 23, CN 19, DE 7, NL 4, KR 4, IL 3, other 12. Tier 1 = 14, Tier 2 = 41, Tier 3 = 116. Chokepoint true = 15. Source "guide" = 37, the rest Yahoo Finance quote URLs
 
 STOP. Pootranon reviews the universe and tiers before any rich data is written.
 

@@ -1,0 +1,172 @@
+id,name,ticker,exchange,country,layer,tier,chokepoint,source
+co:synopsys,Synopsys,SNPS,NASDAQ,US,EDA,1,true,guide
+co:cadence,Cadence Design Systems,CDNS,NASDAQ,US,EDA,1,true,guide
+co:siemens,Siemens,SIE.DE,XETRA,DE,EDA,2,false,guide
+co:keysight,Keysight Technologies,KEYS,NYSE,US,EDA,3,false,https://finance.yahoo.com/quote/KEYS
+co:empyrean,Empyrean Technology,301269.SZ,SZSE,CN,EDA,3,false,https://finance.yahoo.com/quote/301269.SZ
+co:silvaco,Silvaco Group,SVCO,NASDAQ,US,EDA,3,false,https://finance.yahoo.com/quote/SVCO
+co:primarius,Primarius Technologies,688206.SS,SSE,CN,EDA,3,false,https://finance.yahoo.com/quote/688206.SS
+co:arm,Arm Holdings,ARM,NASDAQ,GB,IP,1,false,https://finance.yahoo.com/quote/ARM
+co:rambus,Rambus,RMBS,NASDAQ,US,IP,2,false,https://finance.yahoo.com/quote/RMBS
+co:ceva,CEVA,CEVA,NASDAQ,US,IP,2,false,https://finance.yahoo.com/quote/CEVA
+co:andes,Andes Technology,6533.TW,TWSE,TW,IP,3,false,https://finance.yahoo.com/quote/6533.TW
+co:verisilicon,VeriSilicon,688521.SS,SSE,CN,IP,3,false,https://finance.yahoo.com/quote/688521.SS
+co:arteris,Arteris,AIP,NASDAQ,US,IP,3,false,https://finance.yahoo.com/quote/AIP
+co:asml,ASML,ASML,NASDAQ,NL,Equipment,1,true,guide
+co:applied_materials,Applied Materials,AMAT,NASDAQ,US,Equipment,2,false,guide
+co:lam_research,Lam Research,LRCX,NASDAQ,US,Equipment,2,false,guide
+co:kla,KLA,KLAC,NASDAQ,US,Equipment,2,false,guide
+co:tokyo_electron,Tokyo Electron,8035.T,TSE,JP,Equipment,2,false,guide
+co:asm_international,ASM International,ASM.AS,Euronext Amsterdam,NL,Equipment,2,false,https://finance.yahoo.com/quote/ASM.AS
+co:advantest,Advantest,6857.T,TSE,JP,Equipment,2,false,https://finance.yahoo.com/quote/6857.T
+co:teradyne,Teradyne,TER,NASDAQ,US,Equipment,2,false,https://finance.yahoo.com/quote/TER
+co:screen,SCREEN Holdings,7735.T,TSE,JP,Equipment,2,false,https://finance.yahoo.com/quote/7735.T
+co:nikon,Nikon,7731.T,TSE,JP,Equipment,2,false,https://finance.yahoo.com/quote/7731.T
+co:canon,Canon,7751.T,TSE,JP,Equipment,3,false,https://finance.yahoo.com/quote/7751.T
+co:besi,BE Semiconductor Industries,BESI.AS,Euronext Amsterdam,NL,Equipment,2,false,https://finance.yahoo.com/quote/BESI.AS
+co:onto,Onto Innovation,ONTO,NYSE,US,Equipment,3,false,https://finance.yahoo.com/quote/ONTO
+co:lasertec,Lasertec,6920.T,TSE,JP,Equipment,1,true,https://finance.yahoo.com/quote/6920.T
+co:disco,DISCO,6146.T,TSE,JP,Equipment,1,false,https://finance.yahoo.com/quote/6146.T
+co:kokusai,Kokusai Electric,6525.T,TSE,JP,Equipment,3,false,https://finance.yahoo.com/quote/6525.T
+co:hanmi_semi,Hanmi Semiconductor,042700.KS,KRX,KR,Equipment,2,false,https://finance.yahoo.com/quote/042700.KS
+co:kulicke_soffa,Kulicke & Soffa,KLIC,NASDAQ,SG,Equipment,3,false,https://finance.yahoo.com/quote/KLIC
+co:axcelis,Axcelis Technologies,ACLS,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/ACLS
+co:veeco,Veeco Instruments,VECO,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/VECO
+co:formfactor,FormFactor,FORM,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/FORM
+co:camtek,Camtek,CAMT,NASDAQ,IL,Equipment,3,false,https://finance.yahoo.com/quote/CAMT
+co:nova,Nova,NVMI,NASDAQ,IL,Equipment,3,false,https://finance.yahoo.com/quote/NVMI
+co:aixtron,Aixtron,AIXA.DE,XETRA,DE,Equipment,3,false,https://finance.yahoo.com/quote/AIXA.DE
+co:suss_microtec,SUSS MicroTec,SMHN.DE,XETRA,DE,Equipment,3,false,https://finance.yahoo.com/quote/SMHN.DE
+co:naura,NAURA Technology,002371.SZ,SZSE,CN,Equipment,3,false,https://finance.yahoo.com/quote/002371.SZ
+co:amec,Advanced Micro-Fabrication Equipment,688012.SS,SSE,CN,Equipment,3,false,https://finance.yahoo.com/quote/688012.SS
+co:mks,MKS Instruments,MKSI,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/MKSI
+co:advanced_energy,Advanced Energy Industries,AEIS,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/AEIS
+co:ichor,Ichor Holdings,ICHR,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/ICHR
+co:ultra_clean,Ultra Clean Holdings,UCTT,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/UCTT
+co:cohu,Cohu,COHU,NASDAQ,US,Equipment,3,false,https://finance.yahoo.com/quote/COHU
+co:shin_etsu,Shin-Etsu Chemical,4063.T,TSE,JP,Materials,2,true,guide
+co:sumco,SUMCO,3436.T,TSE,JP,Materials,2,true,guide
+co:globalwafers,GlobalWafers,6488.TWO,TPEx,TW,Materials,2,true,https://finance.yahoo.com/quote/6488.TWO
+co:siltronic,Siltronic,WAF.DE,XETRA,DE,Materials,2,false,https://finance.yahoo.com/quote/WAF.DE
+co:soitec,Soitec,SOI.PA,Euronext Paris,FR,Materials,2,false,https://finance.yahoo.com/quote/SOI.PA
+co:tok,Tokyo Ohka Kogyo,4186.T,TSE,JP,Materials,2,true,https://finance.yahoo.com/quote/4186.T
+co:fujifilm,Fujifilm Holdings,4901.T,TSE,JP,Materials,3,false,https://finance.yahoo.com/quote/4901.T
+co:sumitomo_chemical,Sumitomo Chemical,4005.T,TSE,JP,Materials,3,false,https://finance.yahoo.com/quote/4005.T
+co:resonac,Resonac Holdings,4004.T,TSE,JP,Materials,3,false,https://finance.yahoo.com/quote/4004.T
+co:hoya,HOYA,7741.T,TSE,JP,Materials,1,true,https://finance.yahoo.com/quote/7741.T
+co:agc,AGC,5201.T,TSE,JP,Materials,2,false,https://finance.yahoo.com/quote/5201.T
+co:ajinomoto,Ajinomoto,2802.T,TSE,JP,Materials,1,true,https://finance.yahoo.com/quote/2802.T
+co:photronics,Photronics,PLAB,NASDAQ,US,Materials,3,false,https://finance.yahoo.com/quote/PLAB
+co:entegris,Entegris,ENTG,NASDAQ,US,Materials,2,false,https://finance.yahoo.com/quote/ENTG
+co:qnity,Qnity Electronics,Q,NYSE,US,Materials,3,false,https://finance.yahoo.com/quote/Q
+co:merck_kgaa,Merck KGaA,MRK.DE,XETRA,DE,Materials,3,false,https://finance.yahoo.com/quote/MRK.DE
+co:wacker,Wacker Chemie,WCH.DE,XETRA,DE,Materials,3,false,https://finance.yahoo.com/quote/WCH.DE
+co:linde,Linde,LIN,NASDAQ,IE,Materials,3,false,https://finance.yahoo.com/quote/LIN
+co:air_products,Air Products and Chemicals,APD,NYSE,US,Materials,3,false,https://finance.yahoo.com/quote/APD
+co:air_liquide,Air Liquide,AI.PA,Euronext Paris,FR,Materials,3,false,https://finance.yahoo.com/quote/AI.PA
+co:coherent,Coherent,COHR,NYSE,US,Materials,3,false,https://finance.yahoo.com/quote/COHR
+co:tsmc,TSMC,2330.TW,TWSE,TW,Foundry,1,true,guide
+co:umc,United Microelectronics,2303.TW,TWSE,TW,Foundry,2,false,https://finance.yahoo.com/quote/2303.TW
+co:globalfoundries,GlobalFoundries,GFS,NASDAQ,US,Foundry,3,false,guide
+co:smic,SMIC,0981.HK,HKEX,CN,Foundry,3,false,guide
+co:tower,Tower Semiconductor,TSEM,NASDAQ,IL,Foundry,3,false,https://finance.yahoo.com/quote/TSEM
+co:vanguard_intl,Vanguard International Semiconductor,5347.TWO,TPEx,TW,Foundry,3,false,https://finance.yahoo.com/quote/5347.TWO
+co:psmc,Powerchip Semiconductor Manufacturing,6770.TW,TWSE,TW,Foundry,3,false,https://finance.yahoo.com/quote/6770.TW
+co:hua_hong,Hua Hong Semiconductor,1347.HK,HKEX,CN,Foundry,3,false,https://finance.yahoo.com/quote/1347.HK
+co:db_hitek,DB HiTek,000990.KS,KRX,KR,Foundry,3,false,https://finance.yahoo.com/quote/000990.KS
+co:xfab,X-FAB Silicon Foundries,XFAB.PA,Euronext Paris,BE,Foundry,3,false,https://finance.yahoo.com/quote/XFAB.PA
+co:samsung,Samsung Electronics,005930.KS,KRX,KR,IDM,2,true,guide
+co:intel,Intel,INTC,NASDAQ,US,IDM,2,false,guide
+co:texas_instruments,Texas Instruments,TXN,NASDAQ,US,IDM,2,false,guide
+co:stmicro,STMicroelectronics,STMPA.PA,Euronext Paris,CH,IDM,2,false,https://finance.yahoo.com/quote/STMPA.PA
+co:nxp,NXP Semiconductors,NXPI,NASDAQ,NL,IDM,2,false,https://finance.yahoo.com/quote/NXPI
+co:infineon,Infineon Technologies,IFX.DE,XETRA,DE,IDM,3,false,guide
+co:renesas,Renesas Electronics,6723.T,TSE,JP,IDM,2,false,https://finance.yahoo.com/quote/6723.T
+co:analog_devices,Analog Devices,ADI,NASDAQ,US,IDM,2,false,https://finance.yahoo.com/quote/ADI
+co:microchip,Microchip Technology,MCHP,NASDAQ,US,IDM,3,false,https://finance.yahoo.com/quote/MCHP
+co:onsemi,onsemi,ON,NASDAQ,US,IDM,3,false,https://finance.yahoo.com/quote/ON
+co:sony,Sony Group,6758.T,TSE,JP,IDM,3,false,guide
+co:rohm,ROHM,6963.T,TSE,JP,IDM,3,false,https://finance.yahoo.com/quote/6963.T
+co:wolfspeed,Wolfspeed,WOLF,NYSE,US,IDM,3,false,https://finance.yahoo.com/quote/WOLF
+co:skyworks,Skyworks Solutions,SWKS,NASDAQ,US,IDM,3,false,https://finance.yahoo.com/quote/SWKS
+co:qorvo,Qorvo,QRVO,NASDAQ,US,IDM,3,false,https://finance.yahoo.com/quote/QRVO
+co:diodes,Diodes Incorporated,DIOD,NASDAQ,US,IDM,3,false,https://finance.yahoo.com/quote/DIOD
+co:vishay,Vishay Intertechnology,VSH,NYSE,US,IDM,3,false,https://finance.yahoo.com/quote/VSH
+co:allegro,Allegro MicroSystems,ALGM,NASDAQ,US,IDM,3,false,https://finance.yahoo.com/quote/ALGM
+co:wingtech,Wingtech Technology,600745.SS,SSE,CN,IDM,3,false,https://finance.yahoo.com/quote/600745.SS
+co:sk_hynix,SK Hynix,000660.KS,KRX,KR,Memory,1,true,guide
+co:micron,Micron Technology,MU,NASDAQ,US,Memory,2,true,guide
+co:kioxia,Kioxia Holdings,285A.T,TSE,JP,Memory,2,false,guide
+co:sandisk,Sandisk,SNDK,NASDAQ,US,Memory,2,false,https://finance.yahoo.com/quote/SNDK
+co:nanya,Nanya Technology,2408.TW,TWSE,TW,Memory,3,false,https://finance.yahoo.com/quote/2408.TW
+co:winbond,Winbond Electronics,2344.TW,TWSE,TW,Memory,3,false,guide
+co:macronix,Macronix International,2337.TW,TWSE,TW,Memory,3,false,guide
+co:gigadevice,GigaDevice Semiconductor,603986.SS,SSE,CN,Memory,3,false,https://finance.yahoo.com/quote/603986.SS
+co:ase,ASE Technology Holding,3711.TW,TWSE,TW,Packaging,1,true,guide
+co:amkor,Amkor Technology,AMKR,NASDAQ,US,Packaging,2,false,guide
+co:jcet,JCET Group,600584.SS,SSE,CN,Packaging,2,false,guide
+co:powertech,Powertech Technology,6239.TW,TWSE,TW,Packaging,3,false,https://finance.yahoo.com/quote/6239.TW
+co:kyec,King Yuan Electronics,2449.TW,TWSE,TW,Packaging,3,false,https://finance.yahoo.com/quote/2449.TW
+co:chipbond,Chipbond Technology,6147.TWO,TPEx,TW,Packaging,3,false,https://finance.yahoo.com/quote/6147.TWO
+co:chipmos,ChipMOS Technologies,8150.TW,TWSE,TW,Packaging,3,false,https://finance.yahoo.com/quote/8150.TW
+co:tongfu,Tongfu Microelectronics,002156.SZ,SZSE,CN,Packaging,3,false,https://finance.yahoo.com/quote/002156.SZ
+co:hua_tian,Tianshui Huatian Technology,002185.SZ,SZSE,CN,Packaging,3,false,https://finance.yahoo.com/quote/002185.SZ
+co:ibiden,Ibiden,4062.T,TSE,JP,Packaging,2,false,https://finance.yahoo.com/quote/4062.T
+co:unimicron,Unimicron Technology,3037.TW,TWSE,TW,Packaging,2,false,https://finance.yahoo.com/quote/3037.TW
+co:kinsus,Kinsus Interconnect Technology,3189.TW,TWSE,TW,Packaging,3,false,https://finance.yahoo.com/quote/3189.TW
+co:nanya_pcb,Nan Ya PCB,8046.TW,TWSE,TW,Packaging,3,false,https://finance.yahoo.com/quote/8046.TW
+co:nvidia,NVIDIA,NVDA,NASDAQ,US,Fabless,1,false,guide
+co:amd,AMD,AMD,NASDAQ,US,Fabless,2,false,guide
+co:broadcom,Broadcom,AVGO,NASDAQ,US,Fabless,2,false,guide
+co:qualcomm,Qualcomm,QCOM,NASDAQ,US,Fabless,2,false,guide
+co:marvell,Marvell Technology,MRVL,NASDAQ,US,Fabless,2,false,https://finance.yahoo.com/quote/MRVL
+co:mediatek,MediaTek,2454.TW,TWSE,TW,Fabless,3,false,guide
+co:apple,Apple,AAPL,NASDAQ,US,Fabless,3,false,guide
+co:realtek,Realtek Semiconductor,2379.TW,TWSE,TW,Fabless,3,false,guide
+co:novatek,Novatek Microelectronics,3034.TW,TWSE,TW,Fabless,3,false,https://finance.yahoo.com/quote/3034.TW
+co:himax,Himax Technologies,HIMX,NASDAQ,TW,Fabless,3,false,https://finance.yahoo.com/quote/HIMX
+co:lattice,Lattice Semiconductor,LSCC,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/LSCC
+co:astera_labs,Astera Labs,ALAB,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/ALAB
+co:cirrus_logic,Cirrus Logic,CRUS,NASDAQ,US,Fabless,3,false,guide
+co:credo,Credo Technology,CRDO,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/CRDO
+co:monolithic_power,Monolithic Power Systems,MPWR,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/MPWR
+co:silicon_labs,Silicon Labs,SLAB,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/SLAB
+co:ambarella,Ambarella,AMBA,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/AMBA
+co:semtech,Semtech,SMTC,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/SMTC
+co:macom,MACOM Technology Solutions,MTSI,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/MTSI
+co:synaptics,Synaptics,SYNA,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/SYNA
+co:power_integrations,Power Integrations,POWI,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/POWI
+co:sitime,SiTime,SITM,NASDAQ,US,Fabless,3,false,https://finance.yahoo.com/quote/SITM
+co:silicon_motion,Silicon Motion Technology,SIMO,NASDAQ,TW,Fabless,3,false,https://finance.yahoo.com/quote/SIMO
+co:phison,Phison Electronics,8299.TWO,TPEx,TW,Fabless,3,false,https://finance.yahoo.com/quote/8299.TWO
+co:alchip,Alchip Technologies,3661.TW,TWSE,TW,Fabless,3,false,https://finance.yahoo.com/quote/3661.TW
+co:guc,Global Unichip,3443.TW,TWSE,TW,Fabless,3,false,https://finance.yahoo.com/quote/3443.TW
+co:aspeed,ASPEED Technology,5274.TWO,TPEx,TW,Fabless,3,false,https://finance.yahoo.com/quote/5274.TWO
+co:parade,Parade Technologies,4966.TWO,TPEx,TW,Fabless,3,false,https://finance.yahoo.com/quote/4966.TWO
+co:socionext,Socionext,6526.T,TSE,JP,Fabless,3,false,https://finance.yahoo.com/quote/6526.T
+co:silergy,Silergy,6415.TW,TWSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/6415.TW
+co:montage,Montage Technology,688008.SS,SSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/688008.SS
+co:will_semi,Will Semiconductor (OmniVision),603501.SS,SSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/603501.SS
+co:cambricon,Cambricon Technologies,688256.SS,SSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/688256.SS
+co:hygon,Hygon Information Technology,688041.SS,SSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/688041.SS
+co:rockchip,Rockchip Electronics,603893.SS,SSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/603893.SS
+co:espressif,Espressif Systems,688018.SS,SSE,CN,Fabless,3,false,https://finance.yahoo.com/quote/688018.SS
+co:nordic,Nordic Semiconductor,NOD.OL,Euronext Oslo,NO,Fabless,3,false,https://finance.yahoo.com/quote/NOD.OL
+co:microsoft,Microsoft,MSFT,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/MSFT
+co:alphabet,Alphabet,GOOGL,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/GOOGL
+co:amazon,Amazon.com,AMZN,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/AMZN
+co:meta,Meta Platforms,META,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/META
+co:oracle,Oracle,ORCL,NYSE,US,EndDemand,3,false,https://finance.yahoo.com/quote/ORCL
+co:tesla,Tesla,TSLA,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/TSLA
+co:supermicro,Super Micro Computer,SMCI,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/SMCI
+co:dell,Dell Technologies,DELL,NYSE,US,EndDemand,3,false,https://finance.yahoo.com/quote/DELL
+co:hpe,Hewlett Packard Enterprise,HPE,NYSE,US,EndDemand,3,false,https://finance.yahoo.com/quote/HPE
+co:cisco,Cisco Systems,CSCO,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/CSCO
+co:arista,Arista Networks,ANET,NYSE,US,EndDemand,3,false,https://finance.yahoo.com/quote/ANET
+co:coreweave,CoreWeave,CRWV,NASDAQ,US,EndDemand,3,false,https://finance.yahoo.com/quote/CRWV
+co:western_digital,Western Digital,WDC,NASDAQ,US,EndDemand,1,false,guide
+co:seagate,Seagate Technology,STX,NASDAQ,US,EndDemand,1,false,guide
+co:pure_storage,Pure Storage,PSTG,NYSE,US,EndDemand,3,false,guide
+co:hon_hai,Hon Hai Precision Industry,2317.TW,TWSE,TW,EndDemand,3,false,https://finance.yahoo.com/quote/2317.TW
+co:quanta,Quanta Computer,2382.TW,TWSE,TW,EndDemand,3,false,https://finance.yahoo.com/quote/2382.TW
+co:wiwynn,Wiwynn,6669.TW,TWSE,TW,EndDemand,3,false,https://finance.yahoo.com/quote/6669.TW
