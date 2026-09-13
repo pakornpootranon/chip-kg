@@ -26,11 +26,11 @@ Live checks done on adoption, so later sessions do not repeat them:
 
 ## Task 1: Scaffold and source conversion
 
-- [ ] Layout from CLAUDE.md, `.gitignore` (briefs/*, .env, __pycache__), `requirements.txt` (neo4j), `.env.example` (NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
-- [ ] Convert the Essential Guide docx to `source/guide.md` (pandoc or python-docx). Delete nothing from it
-- [ ] `cypher/constraints.cypher` and `cypher/reset.cypher`
+- [x] Layout from CLAUDE.md, `.gitignore` (briefs/*, .env, __pycache__), `requirements.txt` (neo4j), `.env.example` (kept `NEO4J_USERNAME`, Aura's own name, see adoption note)
+- [x] Convert the Essential Guide docx to `source/guide.md` (python-docx via `uv run`, no pandoc on this Mac). 432 blocks, 44 tables, 17 chapters plus appendices. Word count checked against the docx: nothing dropped
+- [x] `cypher/constraints.cypher` (id unique per label, name unique per label, NewsItem url unique, 12 constraints) and `cypher/reset.cypher`
 
-Done when: tree matches CLAUDE.md and constraints run clean on Aura via MCP.
+Done when: tree matches CLAUDE.md and constraints run clean on Aura via MCP. Done 2026-09-13: all 12 constraints live on the author's Aura instance. Note for docs/mcp.md: the uvx `mcp-neo4j-cypher` server's write tool rejects schema commands ("Only write queries are allowed"), but its read tool runs `CREATE CONSTRAINT` fine. Remaining v1 leftovers to be replaced in Task 4: `load.cypher`, `load.py`, `validate.py` still target the v1 schema.
 
 ## Task 2: Company universe (100+)
 
