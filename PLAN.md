@@ -80,7 +80,7 @@ Analysis prompts in `prompts/analysis/`, one file each, written for a follower t
 - [x] `docs/mcp.md`: MCP for Aura path first (find the MCP URL in the Aura console under Inspect, add as custom connector in Claude, log in with Aura credentials, screenshots), then the uvx `mcp-neo4j-cypher` fallback. Confirm whether the hosted server exposes write tools; record the answer at the top of the doc. Three worked examples showing the question, the generated Cypher, and the answer. Written 2026-09-13 with three screenshot placeholders; the write-tool answer (yes, separate read-write tool, off by default) is from Neo4j's docs and blog, not yet exercised on this account
 - [x] `docs/analysis.md`: one paragraph per screen and per prompt (replaces v1 `docs/screens.md`)
 
-Done when: every screen returns a sensible result and every prompt works from a fresh Claude Desktop session using only docs/mcp.md. Screens verified live through MCP on 2026-09-13. **Not yet done:** the four prompts have not been run from a fresh Claude Desktop session with the MCP for Aura connector; that needs Pootranon's Claude Desktop and the connector set up per docs/mcp.md. Do it together with the Task 4 STOP test.
+Done when: every screen returns a sensible result and every prompt works from a fresh Claude Desktop session using only docs/mcp.md. Screens verified live through MCP on 2026-09-13. Update 2026-09-13: all four prompts were executed by fresh agents that saw only the prompt file and the MCP tools (uvx server). All four worked; edits made from their findings (schema-retry hint, SUPPLIES direction rule, COMPETES_WITH undirected match, empty-result wording, NewsItem date and signal formats). Still untested: the same prompts through the MCP for Aura connector in Claude Desktop, which is Pootranon's check.
 
 ## Task 6: Daily news task
 
@@ -94,7 +94,7 @@ Done when: three consecutive mornings produce a brief and new NewsItem nodes, an
 
 ## Task 7: Follower test and release
 
-- [ ] Fresh machine, fresh Aura, fresh Claude Desktop. Follow docs/ only. Note every point of confusion and fix the doc
+- [ ] Fresh machine, fresh Aura, fresh Claude Desktop. Follow docs/ only. Note every point of confusion and fix the doc. Partial 2026-09-13: a fresh agent read only docs/ as a follower and listed twelve confusion points (missing screenshots, cost never stated, two names for the Aura editor, unlabelled author-only steps, horizontal rules in prompts, write switch never located, Cowork path promised then hedged); all fixed except the screenshots, which need a real screen. The real-machine test is still to do
 - [ ] Tag v1.0
 
 STOP. Thai posts get written after this, using thai-blog-voice, one post per docs page.
