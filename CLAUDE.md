@@ -51,11 +51,17 @@ Tier is Pootranon's picks-and-shovels tier, not market cap. Default rule until h
 ```
 data/           nodes.csv, edges.csv, GAPS.md
 cypher/         constraints.cypher, load.cypher, screens/*.cypher
-scripts/        validate.py, load.py, propose_updates.py, apply_updates.py
-skills/         kg-update/SKILL.md (Hermes, agentskills.io format)
-pending/        proposed update statements awaiting approval (gitignored contents)
+scripts/        validate.py, load.py (author tools: need the repo checkout)
+skills/         kg-update/SKILL.md + kg-update/scripts/{propose_updates,apply_updates,query}.py
+                (Hermes, agentskills.io format; self-contained so `hermes skills install <raw URL>`
+                works with no git clone — the scripts talk to the live graph, never to data/*.csv,
+                except that when run from inside this repo they also sync data/edges.csv)
+pending/        proposed update statements awaiting approval (gitignored contents; followers get
+                ~/.chip-kg/pending/ instead, see skills/kg-update/SKILL.md)
 docs/           follower-facing README in English; Thai posts live elsewhere
 ```
+
+Credentials use Neo4j's own names everywhere (`NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`) so a follower can paste the Aura credentials file as-is. Hermes talks to Neo4j only through the skill's scripts (one credential entry in `~/.hermes/.env`); the MCP server is for Claude Desktop/Code users (`docs/mcp.md`).
 
 ## Working rules for this session
 

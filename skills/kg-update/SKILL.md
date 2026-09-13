@@ -1,154 +1,141 @@
 ---
 name: kg-update
-description: Scan recent news for the chip-kg company list and propose add-only edge updates for human approval before writing to Neo4j. Use on the weekly schedule, or on demand when the author names a specific news item.
-version: 1.0.0
+description: Weekly maintenance for the chip-kg Neo4j knowledge graph. Scans recent news for the companies already in the graph, proposes add-only edge updates, sends the diff for human approval, and applies only what was approved. Use on the weekly schedule or on demand with a specific article URL.
+version: 1.1.0
 metadata:
   hermes:
-    tags: [neo4j, cypher, finance, cron]
+    tags: [neo4j, cypher, finance, semiconductors, cron]
     category: research
-    config:
-      - key: chip_kg.repo_path
-        description: "Local path to the chip-kg repo checkout"
-        prompt: "Where is the chip-kg repo checked out on this machine?"
 required_environment_variables:
   - name: NEO4J_URI
-    prompt: Neo4j Aura connection URI (neo4j+s://...)
-    help: From the Aura console for this graph's instance
-    required_for: applying approved updates
-  - name: NEO4J_USER
+    prompt: Neo4j Aura connection URI (starts with neo4j+s://)
+    help: From the credentials file you downloaded when you created the Aura instance
+    required_for: reading and updating the graph
+  - name: NEO4J_USERNAME
     prompt: Neo4j username
-    help: Usually "neo4j"
-    required_for: applying approved updates
+    help: Usually neo4j, from the same credentials file
+    required_for: reading and updating the graph
   - name: NEO4J_PASSWORD
     prompt: Neo4j password
-    help: From the Aura console; shown only once when the instance was created
-    required_for: applying approved updates
+    help: From the same credentials file; Aura shows it only once
+    required_for: reading and updating the graph
 ---
 
 # chip-kg update loop
 
-You are proposing changes to a small, hand-curated chip-industry knowledge
-graph. The whole value of this graph is that a human reviews every change
-before it lands — you never write to Neo4j without approval, and you never
-delete or modify an existing fact. Read this whole file before doing
-anything; do not start executing the steps below from memory of a past run.
+You maintain a small, hand-curated knowledge graph of the chip industry that
+a person uses for stock screening. The graph is only valuable because a human
+approves every change. So: you never write to Neo4j without an explicit
+approval, and nothing you do can delete or modify an existing fact. Read this
+whole file before acting; do not run the steps from memory of a past run.
 
-## The ontology (so you don't invent something that doesn't fit)
+## Tools in this skill
+
+Three scripts live in the `scripts/` folder next to this file. Run each with
+`uv run`, which installs the one Python dependency on first use. Refer to the
+folder as the skill directory; after a normal install it is
+`~/.hermes/skills/research/kg-update`.
+
+- [scripts/query.py](scripts/query.py): read-only. Runs a Cypher query or one
+  of the five numbered screens. Refuses any write keyword.
+- [scripts/propose_updates.py](scripts/propose_updates.py): turns a JSON list
+  of proposed edges into a pending Cypher file, after checking every edge
+  against the ontology and the live graph. Writes to `~/.chip-kg/pending/`.
+- [scripts/apply_updates.py](scripts/apply_updates.py): dry-runs a pending
+  file by default; with `--confirm` applies it and moves it to
+  `~/.chip-kg/pending/applied/`. Refuses any file containing DELETE or SET.
+
+All three read `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD` from the
+environment. If any is missing, stop and tell the user to enter them from the
+desktop app or `hermes chat` (a Telegram chat cannot collect secrets), or to
+add them to `~/.hermes/.env`.
+
+## The ontology
 
 Node labels: `Company`, `Layer`, `Technology`, `Country`, `Chokepoint`.
-Relationship types, always `(Company)-[TYPE]->(?)`:
+Relationships, always from a Company:
 
-- `OPERATES_IN` -> Layer
-- `SUPPLIES` -> Company
-- `COMPETES_WITH` -> Company (written lower-name-first; the script fixes this for you if you get it backwards)
-- `DEPENDS_ON` -> Technology
-- `HQ_IN` -> Country
-- `CONTROLS` -> Chokepoint
+- `OPERATES_IN` to a Layer
+- `SUPPLIES` to a Company
+- `COMPETES_WITH` to a Company (stored lower-name-first; the script fixes the order for you)
+- `DEPENDS_ON` to a Technology
+- `HQ_IN` to a Country
+- `CONTROLS` to a Chokepoint
 
-Every edge carries `as_of`, `source`, `confidence` (`high` = filing, `medium`
-= earnings call or company communication, `low` = news or inference — most
-of what you propose from a news scan will be `low` or `medium`, essentially
-never `high`).
+Every edge carries `as_of`, `source` and `confidence`. Confidence rule:
+`high` means a regulatory filing, `medium` an earnings call or direct company
+communication, `low` a news report or your own inference. A news scan almost
+always yields `low`, sometimes `medium`, never `high`.
 
-**The add-only rule, stated plainly:** you may only propose brand-new edges.
-You never propose deleting an edge, and you never propose changing the
-properties of an edge that already exists. If a company relationship has
-changed (e.g. a competitor exited a market), that's still expressed by
-adding a *new* edge with today's `as_of` — the old one stays, and a human
-reading `cypher/screens/05_stale_edges.cypher` later is how staleness gets
-surfaced and judged, not an automatic overwrite. This isn't just a
-convention: `scripts/apply_updates.py` will refuse to run any file that
-contains the words DELETE or SET outside a comment, so there's a technical
-backstop if you (or your extraction) ever try to violate it.
+## The add-only rule
 
-## Company list
-
-Only propose edges between companies (or Chokepoints/Technologies/
-Countries/Layers) that already exist in the graph. `propose_updates.py`
-validates this and will reject anything else with a clear error rather than
-silently creating a new node — this skill adds edges, never nodes. To get
-the current company list, read `data/nodes.csv` in the repo, or query the
-graph directly:
-
-```cypher
-MATCH (c:Company {listed: true}) RETURN c.name ORDER BY c.name
-```
+You may only propose brand-new edges between nodes that already exist. You
+never propose deleting an edge, changing an edge, or adding a company. If a
+relationship has changed in the real world, that is still expressed by
+adding a new edge with today's `as_of`; the old one stays, and screen 05
+(stale edges) is how a human later finds and judges it. This is enforced by
+the scripts, not just requested of you: `propose_updates.py` rejects unknown
+nodes, and `apply_updates.py` refuses any file with DELETE or SET in it.
 
 ## The weekly run (scheduled)
 
-1. **Read the company list** (query above).
-2. **Search for recent news** on those companies from the last 7 days
-   (or whatever window this run covers) — supply deals, competitive moves,
-   capacity/technology dependencies, chokepoint changes. You're looking for
-   facts that map cleanly onto the six relationship types above; skip
-   anything that's just a stock-price move or a generic earnings beat with
-   no new relationship in it.
-3. **For each real finding**, write one JSON object:
+1. Get the company list:
+   ```
+   uv run "<skill dir>/scripts/query.py" --cypher "MATCH (c:Company {listed: true}) RETURN c.name AS name ORDER BY name"
+   ```
+2. Search the news of the last 7 days for those companies. You are looking
+   for facts that map onto the six relationship types: a new supply deal, a
+   new competitor, a dependency on a technology, control of a chokepoint.
+   Skip stock-price moves and earnings beats that contain no relationship.
+   Zero findings is a normal week; never invent one.
+3. For each finding write one object, collect them in a list, and save it as
+   a JSON file, for example `/tmp/edges.json`:
    ```json
    {"from": "Arm Holdings", "to": "Samsung Electronics", "type": "SUPPLIES",
-    "confidence": "low", "note": "one-line plain-English reason, becomes the diff text"}
+    "confidence": "low", "note": "one plain-English line; this becomes the diff text"}
    ```
-   Collect them into a list and save as a temp file, e.g. `/tmp/edges.json`.
-   Be conservative — a smaller number of well-sourced edges beats padding
-   the list. Zero findings in a given week is a fine, normal outcome; don't
-   invent a finding to have something to report.
-4. **Run the propose script**, once per distinct source URL (each run's
-   `source` applies to every edge in that call, so don't mix edges from two
-   different articles into one call):
-   ```bash
-   cd <chip_kg.repo_path>
-   python scripts/propose_updates.py --source "<news URL>" --edges-json /tmp/edges.json
+   Company names must match the graph exactly (use the list from step 1).
+4. Propose, once per source article, because one call takes one `--source`:
    ```
-   If it exits non-zero, it printed exactly which edges failed and why —
-   fix your JSON (usually a company-name typo or wrong edge direction) and
-   re-run. Don't hand-edit a `.cypher` file to work around a validation
-   failure.
-5. **Send the diff to Telegram.** The script's stdout output (or the header
-   comment block of the `pending/<date>.cypher` file it wrote) is already a
-   plain-English diff — send that text as a message to the chat this cron
-   job was created in. Include the pending filename so a human can refer to
-   it by name.
-6. **Wait for approval.** Do not proceed to step 7 until a human replies
-   approving the change in that same chat. If nobody replies within this
-   run, stop here — leave the file in `pending/` for the next run (or a
-   manual review) to pick up; do not apply it unattended, and do not delete
-   it.
-7. **Apply, only after explicit approval:**
-   ```bash
-   python scripts/apply_updates.py pending/<date>.cypher --confirm
+   uv run "<skill dir>/scripts/propose_updates.py" --source "<article URL>" --edges-json /tmp/edges.json
    ```
-   This moves the file to `pending/applied/` on success. If it fails, report
-   the exact error back to the chat — don't retry silently more than once.
-8. **Re-run the stale-edges screen and report the result** to the chat, so
-   the same conversation shows both what was just added and the current
-   state of anything that needs a human's attention next:
-   ```cypher
-   :param months => 6;
-   MATCH (a)-[r]->(b) WHERE date(r.as_of) < date() - duration({months: $months})
-   RETURN type(r) AS relationship, a.name AS from_company, b.name AS to_node,
-          r.as_of AS as_of, r.source AS source, r.confidence AS confidence
-   ORDER BY r.as_of ASC;
+   If it exits non-zero it printed which edges failed and why. Fix the JSON
+   and re-run. Never hand-edit a `.cypher` file.
+5. Send the diff. The script's output (the block of `//` comment lines) is
+   already plain English. Send it as a message to the chat this job delivers
+   to, together with the pending file name, and ask for approval.
+6. Wait. Do not continue until a human replies approving it in that chat. If
+   no reply arrives during this run, stop here and leave the file in
+   `~/.chip-kg/pending/` for next time. Do not apply unattended. Do not
+   delete it.
+7. After explicit approval:
+   ```
+   uv run "<skill dir>/scripts/apply_updates.py" <file name> --confirm
+   ```
+   If it fails, report the exact error to the chat. Retry at most once.
+8. Report the stale-edges screen so the same conversation shows what was
+   added and what needs attention next:
+   ```
+   uv run "<skill dir>/scripts/query.py" --screen 05
    ```
 
 ## On-demand run
 
-The author may instead just hand you a single news URL or link and ask you
-to propose an update from it. Same steps 3-8 above, minus the broad search
-in step 2 — read the one article, extract whatever real edges it supports
-(often just one), and continue from step 3.
+If the user hands you one article URL, do steps 3 to 8 for that article
+only. Read it, extract the real edges it supports (often just one), and
+continue from step 3.
 
-## Things that have gone wrong before, watch for these
+## Things that go wrong
 
-- Don't propose an edge for a company that isn't in the graph yet — that's
-  out of scope for this skill (adding a *node* is a bigger decision the
-  author makes deliberately, not something a weekly news scan should do).
-- Don't reuse an old `pending/*.cypher` file's `as_of` — always let the
-  script default to today's date unless the author explicitly backdates it.
-- Confidence is `low` far more often than not for a news-sourced edge.
-  Resist the pull to round up to `medium` just because a story sounds
-  authoritative — `medium` is for an earnings call or direct company
-  communication, not a news write-up of one.
-- If a headline is about a company *considering* or *in talks for* a deal,
-  that is weaker than an announced/signed one — say so in the `note`, and
-  consider whether it's worth proposing yet at all versus waiting for
-  confirmation.
+- Proposing a company that is not in the graph. The script refuses it; do
+  not work around that. Adding a company is the author's decision, made in
+  the repo, not something a news scan does.
+- Rounding confidence up. A news write-up of a deal is `low`. `medium` is for
+  the company's own words (earnings call, press release).
+- "In talks" is not "signed". Say so in the note, and consider waiting for
+  confirmation before proposing at all.
+- Reusing an old date. Let `--as-of` default to today unless the user
+  explicitly asks to backdate.
+- A certificate error when the scripts connect. Tell the user to change
+  `neo4j+s://` to `neo4j+ssc://` in `NEO4J_URI`; their network is inspecting
+  TLS. See the troubleshooting section of docs/hermes.md in the repo.

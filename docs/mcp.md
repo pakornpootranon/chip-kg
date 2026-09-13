@@ -6,7 +6,7 @@ plain English instead of writing Cypher yourself.
 
 This uses the official Neo4j MCP server, package name **`mcp-neo4j-cypher`**
 (confirmed on PyPI, latest `0.6.0` as of this writing). It runs locally on
-your machine and talks to your Aura instance over the internet — nothing
+your machine and talks to your Aura instance over the internet. Nothing
 about your graph is sent anywhere except Neo4j and, when you ask a question,
 whichever Claude product you're using.
 
@@ -62,7 +62,7 @@ claude mcp add neo4j-cypher -s user \
 
 Two tools show up: one that reads the graph's schema (labels, relationship
 types, properties) and one that runs a read Cypher query you or Claude
-writes. Claude reads the schema first, then writes Cypher against it — you
+writes. Claude reads the schema first, then writes Cypher against it, so you
 don't need to teach it the ontology by hand, though pointing it at
 [`../CLAUDE.md`](../CLAUDE.md) helps it use the Tier/Layer conventions
 correctly rather than guessing.
@@ -70,7 +70,7 @@ correctly rather than guessing.
 A known quirk: on first connecting, Claude may call the schema tool with no
 sample size and get a Cypher syntax error back (`Variable 'None' not
 defined`). That's a bug in the MCP server itself, not something wrong with
-your graph — Claude recovers on retry by passing an explicit sample size, or
+your graph. Claude recovers on retry by passing an explicit sample size, or
 you can just ask it again.
 
 ## Three demo questions
@@ -95,7 +95,7 @@ RETURN ch.name AS chokepoint, companies
 | HBM Memory | SK Hynix |
 
 Clean on the first try, and this is screen `01_single_source_chokepoints` in
-plain English — a good first question to ask because you can check Claude's
+plain English, a good first question to ask because you can check Claude's
 answer against that file yourself.
 
 ### 2. "If NVIDIA's demand keeps growing, which listed companies within two supply hops upstream of NVIDIA would benefit, grouped by supply-chain layer?"
@@ -122,7 +122,7 @@ NVIDIA without confirming that direction against the schema, and it matched
 the string `"NVIDIA"` without first looking up the exact name stored on the
 node. Both guesses happened to be right here. The tell that they weren't
 would have been an empty result, or an implausible layer like `EndDemand`
-showing up "upstream" — if you ever see that, ask Claude to check the
+showing up "upstream". If you ever see that, ask Claude to check the
 relationship direction and the exact company name before trusting the
 answer.
 
@@ -154,19 +154,19 @@ ORDER BY concentration DESC
 | Foundry | United States | 1 | 3 | 33% |
 | Packaging | United States | 1 | 3 | 33% |
 
-(One layer, IP, has zero companies mapped to it yet via `OPERATES_IN` — a
+(One layer, IP, has zero companies mapped to it yet via `OPERATES_IN`, a
 gap in the seed data, listed in `data/GAPS.md`, not a query bug.)
 
 This is the question that actually caught something. Materials (Japan) and
 EndDemand (United States) are tied at 100% concentration, and the question
-as asked — "which layer" singular — doesn't say how to break a tie. A first
+as asked ("which layer", singular) doesn't say how to break a tie. A first
 attempt that added `ORDER BY concentration DESC LIMIT 1` would have silently
 picked whichever of the two Neo4j happened to return first and reported it
 as *the* answer, with no indication a tie was ever there. The honest version
 of this query stops at the ranked table and states the tie; if you want a
 single name, you need a reason to prefer one (here, Materials has more
-companies backing the same 100% figure — 4 versus 3 — for whatever that's
+companies backing the same 100% figure, 4 versus 3, for whatever that's
 worth). The lesson for using Claude on this graph generally: normalizing a
 share within each group is necessary to get a correct ranking, but it is not
-sufficient to collapse that ranking to one answer — watch for Claude adding
+sufficient to collapse that ranking to one answer. Watch for Claude adding
 a `LIMIT 1` that quietly resolves a tie you were never told about.

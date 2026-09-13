@@ -1,5 +1,20 @@
 # Gaps and judgment calls
 
+## v4 (2026-09-13): follower path rebuilt after a validation pass
+
+What was wrong for a follower, all found by checking against a live Hermes
+install rather than the plan text: three commits were unpushed while
+`load.cypher` reads raw GitHub `main` (a follower would have loaded the old
+74-node graph); the README's "point Hermes at the file / enter credentials
+when prompted" instructions did not work (YAML editing, a category-folder
+quirk, a desktop-sandbox symlink quirk, and Telegram/cron surfaces cannot
+prompt for secrets); the scripts required a git clone; and credentials used
+two different variable names. All fixed; see PLAN.md's Task 7 note. Still
+open: the Hermes + Telegram round trip has now been tested up to the install
+and script execution on the author's machine, but not the scheduled
+Telegram delivery and approval reply, which needs a real Monday (or an
+on-demand message from Telegram).
+
 ## v3 (2026-09-13): Task 7 update-loop scripts, tested live
 
 `scripts/propose_updates.py` and `scripts/apply_updates.py` were tested end
