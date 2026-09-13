@@ -1,32 +1,59 @@
 # Ask Claude questions about the graph
 
-Once you've loaded the graph into your AuraDB Free instance (step 2 in
-[`README.md`](README.md)), you can connect Claude to it and ask questions in
-plain English instead of writing Cypher yourself.
+Once the graph is loaded (see [`aura.md`](aura.md)), connect Claude to your Aura instance and ask questions in plain English. Claude reads the schema, writes the Cypher, runs it and explains the answer.
 
-This uses the official Neo4j MCP server, package name **`mcp-neo4j-cypher`**
-(confirmed on PyPI, latest `0.6.0` as of this writing). It runs locally on
-your machine and talks to your Aura instance over the internet. Nothing
-about your graph is sent anywhere except Neo4j and, when you ask a question,
-whichever Claude product you're using.
+**Does the hosted server let Claude write to the graph?** Yes, but only if you turn it on. MCP for Aura exposes three tools: get schema, read (read-only Cypher) and a separate read-write tool that is off by default. Leave it off for asking questions. The daily news task ([`schedule.md`](schedule.md)) needs it on, because it adds NewsItem nodes. Nothing in this repo ever deletes or edits existing Company nodes or edges, on or off.
 
-You'll need [`uv`](https://docs.astral.sh/uv/) installed (`uvx` ships with
-it) so the server can be run without a manual `pip install`.
+## Path A: MCP for Aura (recommended, nothing to install)
 
-## Claude Desktop
+Neo4j runs an MCP server for every Aura instance, including Free. You add its URL to Claude as a custom connector and log in with your Aura account. No password goes into any config file.
 
-Edit your Claude Desktop config file:
+### 1. Find your instance's MCP URL
 
-- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+In the [Aura console](https://console.neo4j.io) go to **Instances**, open the **[...]** menu on your instance and choose **Inspect**. The panel shows the MCP server URL. It always has this shape, where the instance id is the eight characters at the start of your connection URI:
 
-Add this under `mcpServers` (create the file/key if it doesn't exist), using
-the credentials from your Aura instance:
+```
+https://<INSTANCE_ID>.mcp-instances.neo4j.io
+```
+
+Screenshot placeholder: `docs/img/mcp-01-inspect.png` (Inspect panel with the MCP URL).
+
+### 2. Add it to Claude
+
+**Claude Desktop or claude.ai:** Settings, then **Connectors**, then **Add custom connector**. Name it `chip-kg`, paste the URL, click **Add**. Then click **Connect**. A browser tab opens on the Aura login page; sign in with the same account you used to create the instance and approve. Back in Claude the connector shows as connected.
+
+Screenshot placeholder: `docs/img/mcp-02-add-connector.png` (Add custom connector dialog).
+Screenshot placeholder: `docs/img/mcp-03-aura-login.png` (Aura consent page).
+
+Custom connectors need a paid Claude plan (Pro, Max, Team or Enterprise).
+
+**Claude Code:** from a terminal:
+
+```bash
+claude mcp add --transport http chip-kg https://<INSTANCE_ID>.mcp-instances.neo4j.io
+claude mcp list
+```
+
+Then inside a Claude Code session type `/mcp`, pick `chip-kg` and follow the login link.
+
+### 3. Turn on the connector in a chat
+
+Start a new chat, open the tools menu (the plus or sliders icon under the message box) and make sure `chip-kg` is enabled. Then ask a question. The first time, Claude will call the schema tool; that is normal.
+
+### If the instance is paused
+
+Aura Free pauses after a few days without use. The connector then fails to connect. Open the console, click **Resume** on the instance, wait a minute, try again.
+
+## Path B: run the MCP server yourself (fallback)
+
+Use this if custom connectors are not available on your plan, or if you want the graph in Claude Code without OAuth. It runs Neo4j's open-source `mcp-neo4j-cypher` server on your computer with [`uv`](https://docs.astral.sh/uv/) installed.
+
+**Claude Desktop:** edit the config file (macOS `~/Library/Application Support/Claude/claude_desktop_config.json`, Windows `%APPDATA%\Claude\claude_desktop_config.json`) and add, with your own credentials:
 
 ```json
 {
   "mcpServers": {
-    "neo4j-cypher": {
+    "chip-kg": {
       "command": "uvx",
       "args": ["mcp-neo4j-cypher"],
       "env": {
@@ -40,14 +67,12 @@ the credentials from your Aura instance:
 }
 ```
 
-Restart Claude Desktop after saving.
+Restart Claude Desktop.
 
-## Claude Code
-
-From the command line, in any directory:
+**Claude Code:**
 
 ```bash
-claude mcp add neo4j-cypher -s user \
+claude mcp add chip-kg -s user \
   -e NEO4J_URI=neo4j+s://xxxxxxxx.databases.neo4j.io \
   -e NEO4J_USERNAME=neo4j \
   -e NEO4J_PASSWORD=your-password \
@@ -55,118 +80,73 @@ claude mcp add neo4j-cypher -s user \
   -- uvx mcp-neo4j-cypher
 ```
 
-`-s user` makes it available in every project, not just this one. Run
-`claude mcp list` to confirm it connected.
+Two quirks of this server, seen while building the repo. On the first schema call Claude may get an error about a `None` variable; it recovers by retrying with a sample size. And its write tool refuses schema statements like `CREATE CONSTRAINT`, while its read tool happens to run them. Use `scripts/load.py` or the Aura query editor for constraints.
 
-## What Claude can do once connected
+## Three worked examples
 
-Two tools show up: one that reads the graph's schema (labels, relationship
-types, properties) and one that runs a read Cypher query you or Claude
-writes. Claude reads the schema first, then writes Cypher against it, so you
-don't need to teach it the ontology by hand, though pointing it at
-[`../CLAUDE.md`](../CLAUDE.md) helps it use the Tier/Layer conventions
-correctly rather than guessing.
+Each was run against the loaded graph on 2026-09-13. Ask the question as written and you should get the same numbers until the data changes.
 
-A known quirk: on first connecting, Claude may call the schema tool with no
-sample size and get a Cypher syntax error back (`Variable 'None' not
-defined`). That's a bug in the MCP server itself, not something wrong with
-your graph. Claude recovers on retry by passing an explicit sample size, or
-you can just ask it again.
+### 1. "Which chokepoints are controlled by only one company?"
 
-## Three demo questions
-
-These were run blind: a fresh Claude session was given nothing but the
-ontology above (not this repo's `cypher/screens/` files) and wrote each
-query on its first attempt.
-
-### 1. "Which chokepoints in this graph are controlled by only one company?"
+Cypher Claude wrote:
 
 ```cypher
-MATCH (c:Company)-[:CONTROLS]->(ch:Chokepoint)
-WITH ch, count(DISTINCT c) AS numControllers, collect(c.name) AS companies
-WHERE numControllers = 1
-RETURN ch.name AS chokepoint, companies
+MATCH (c:Company)-[r:CONTROLS]->(cp:Chokepoint)
+WITH cp, collect(c.name) AS controllers, collect(r.confidence) AS confidence, count(c) AS n
+WHERE n = 1
+RETURN cp.name AS chokepoint, cp.layer AS layer, controllers[0] AS controlled_by, confidence[0] AS confidence
+ORDER BY layer, chokepoint
 ```
 
-| chokepoint | controlled by |
-|---|---|
-| EUV Lithography | ASML |
-| Advanced Foundry (<7nm) | TSMC |
-| HBM Memory | SK Hynix |
+| chokepoint | layer | controlled by | confidence |
+|---|---|---|---|
+| EUV Lithography | Equipment | ASML | high |
+| EUV Mask Inspection | Equipment | Lasertec | medium |
+| ABF Substrate Film | Materials | Ajinomoto | medium |
 
-Clean on the first try, and this is screen `01_single_source_chokepoints` in
-plain English, a good first question to ask because you can check Claude's
-answer against that file yourself.
+This is screen 01 in plain English, so you can check the answer against `cypher/screens/01_single_source_chokepoints.cypher` yourself. Notice that Advanced Foundry and HBM Memory no longer appear: Samsung and Micron were added as second controllers in v2, at medium confidence. Whether that is the right call is a data question, not a query question; see `data/GAPS.md`.
 
-### 2. "If NVIDIA's demand keeps growing, which listed companies within two supply hops upstream of NVIDIA would benefit, grouped by supply-chain layer?"
+### 2. "If NVIDIA's demand keeps growing, which companies within two supply hops upstream of NVIDIA benefit, grouped by layer?"
 
 ```cypher
-MATCH path = (upstream:Company)-[:SUPPLIES*1..2]->(nvidia:Company {name: "NVIDIA"})
-WHERE upstream.listed = true
-MATCH (upstream)-[:OPERATES_IN]->(l:Layer)
-RETURN l.name AS layer, l.order AS layerOrder, collect(DISTINCT upstream.name) AS companies
-ORDER BY layerOrder
+MATCH (supplier:Company)-[:SUPPLIES*1..2]->(target:Company {name: "NVIDIA"})
+WHERE supplier <> target
+WITH DISTINCT supplier
+MATCH (supplier)-[:OPERATES_IN]->(layer:Layer)
+RETURN layer.name AS layer, layer.order AS layer_order,
+       collect(DISTINCT supplier.name + " (T" + toString(supplier.tier) + ")") AS companies
+ORDER BY layer_order
 ```
 
-| layer | companies |
-|---|---|
-| Foundry | TSMC |
-| IDM | Micron Technology |
-| Memory | SK Hynix |
+Fifty-three companies across nine layers. Foundry is TSMC alone. Memory is SK Hynix and Micron. Equipment has nineteen names, from ASML and Lasertec (Tier 1) through Advantest, Lam, KLA and Tokyo Electron (Tier 2) to Camtek and FormFactor (Tier 3). Materials has sixteen, including HOYA and Ajinomoto at Tier 1. Packaging shows ASE, Amkor and the substrate makers Ibiden, Unimicron and Nan Ya PCB.
 
-Also correct, and the result is economically sensible (foundry and memory
-inputs upstream of a fabless GPU designer), which is exactly why it's worth
-flagging what Claude did NOT check before trusting that: it assumed
-`SUPPLIES` points from supplier to customer and walked it backwards from
-NVIDIA without confirming that direction against the schema, and it matched
-the string `"NVIDIA"` without first looking up the exact name stored on the
-node. Both guesses happened to be right here. The tell that they weren't
-would have been an empty result, or an implausible layer like `EndDemand`
-showing up "upstream". If you ever see that, ask Claude to check the
-relationship direction and the exact company name before trusting the
-answer.
+Two things Claude did not check before trusting this. It assumed SUPPLIES points from supplier to customer, and it matched the string "NVIDIA" without first looking up the exact name on the node. Both happened to be right. The tell that they were not would be an empty result, or EndDemand names showing up "upstream". If you see that, ask Claude to confirm the relationship direction and the exact company name.
 
-### 3. "Which layer of the chip supply chain is most concentrated in a single country, and which country is it?"
+### 3. "Which layer is most concentrated in a single country?"
 
 ```cypher
-MATCH (c:Company)-[:OPERATES_IN]->(l:Layer)
-MATCH (c)-[:HQ_IN]->(country:Country)
-WITH l, country, count(DISTINCT c) AS numCompanies
-WITH l, collect({country: country.name, numCompanies: numCompanies}) AS countryCounts, sum(numCompanies) AS totalCompanies
-UNWIND countryCounts AS cc
-WITH l, totalCompanies, cc
-ORDER BY cc.numCompanies DESC
-WITH l, totalCompanies, collect(cc)[0] AS topCountry
-RETURN l.name AS layer, topCountry.country AS country, topCountry.numCompanies AS companiesInCountry, totalCompanies,
-       toFloat(topCountry.numCompanies) / totalCompanies AS concentration
-ORDER BY concentration DESC
+MATCH (c:Company)-[:OPERATES_IN]->(l:Layer), (c)-[:HQ_IN]->(cn:Country)
+WITH l, cn, count(c) AS n
+WITH l, collect({country: cn.name, count: n}) AS breakdown, sum(n) AS total
+UNWIND breakdown AS b
+RETURN l.name AS layer, b.country AS country, b.count AS companies,
+       round(100.0 * b.count / total) AS pct_of_layer
+ORDER BY l.order, pct_of_layer DESC
 ```
 
-| layer | top country | companies | of layer total | concentration |
-|---|---|---|---|---|
-| Materials | Japan | 4 | 4 | 100% |
-| EndDemand | United States | 3 | 3 | 100% |
-| EDA | United States | 2 | 3 | 67% |
-| IDM | United States | 5 | 8 | 63% |
-| Fabless | United States | 5 | 8 | 63% |
-| Equipment | United States | 4 | 7 | 57% |
-| Memory | Taiwan | 2 | 5 | 40% |
-| Foundry | United States | 1 | 3 | 33% |
-| Packaging | United States | 1 | 3 | 33% |
+Top country per layer:
 
-(One layer, IP, has zero companies mapped to it yet via `OPERATES_IN`, a
-gap in the seed data, listed in `data/GAPS.md`, not a query bug.)
+| layer | top country | share of layer |
+|---|---|---|
+| EndDemand | United States | 83% |
+| Packaging | Taiwan | 62% |
+| IDM | United States | 58% |
+| EDA | United States | 57% |
+| IP | United States | 50% |
+| Fabless | United States | 49% |
+| Materials | Japan | 43% |
+| Equipment | United States | 41% |
+| Foundry | Taiwan | 40% |
+| Memory | Taiwan | 38% |
 
-This is the question that actually caught something. Materials (Japan) and
-EndDemand (United States) are tied at 100% concentration, and the question
-as asked ("which layer", singular) doesn't say how to break a tie. A first
-attempt that added `ORDER BY concentration DESC LIMIT 1` would have silently
-picked whichever of the two Neo4j happened to return first and reported it
-as *the* answer, with no indication a tie was ever there. The honest version
-of this query stops at the ranked table and states the tie; if you want a
-single name, you need a reason to prefer one (here, Materials has more
-companies backing the same 100% figure, 4 versus 3, for whatever that's
-worth). The lesson for using Claude on this graph generally: normalizing a
-share within each group is necessary to get a correct ranking, but it is not
-sufficient to collapse that ranking to one answer. Watch for Claude adding
-a `LIMIT 1` that quietly resolves a tie you were never told about.
+The question says "which layer", singular, and an eager query adds `LIMIT 1` and returns EndDemand. That answer is technically right and economically useless: the hyperscalers being American is not a supply-chain risk. The interesting rows are Packaging (Taiwan 62%) and Foundry (Taiwan 40% by count, but TSMC alone is most of the world's advanced capacity). Two lessons. Headquarters count is not capacity share; read `fab_or_ops_geography` and the CONTROLS edges for that. And watch for Claude collapsing a ranked table to one row when the question deserves the whole table.

@@ -9,7 +9,7 @@ No engineering background required. Follow these steps in order.
 
 ## 1. Create a free Neo4j AuraDB instance
 
-1. Go to [console.neo4j.io](https://console.neo4j.io) and sign up (free tier).
+1. Go to [console.neo4j.io](https://console.neo4j.io) and sign up (free tier). Step-by-step with screenshots: [`docs/aura.md`](aura.md).
 2. Create a new **AuraDB Free** instance.
 3. Download the credentials file it gives you (`NEO4J_URI`, `NEO4J_USERNAME`,
    `NEO4J_PASSWORD`). Keep it safe; the password is shown only once.
@@ -30,7 +30,7 @@ Still in Neo4j Browser, paste in
 [`cypher/screens/01_single_source_chokepoints.cypher`](../cypher/screens/01_single_source_chokepoints.cypher).
 It lists every chokepoint in the chip supply chain controlled by exactly one
 company, the highest-conviction picks-and-shovels names. See
-[`docs/screens.md`](screens.md) for what each screen finds and why it matters.
+[`docs/analysis.md`](analysis.md) for what each screen finds and why it matters, plus saved questions to paste into Claude.
 
 ## 4. Ask Claude questions about the graph
 

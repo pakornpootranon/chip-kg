@@ -63,24 +63,24 @@ STOP. Pootranon pastes load.cypher into a second fresh Aura instance himself, as
 
 Screens in `cypher/screens/`, each with the required comment header:
 
-- [ ] `01_single_source_chokepoints`
-- [ ] `02_upstream_of` (two SUPPLIES hops upstream of a named company, listed only, grouped by layer)
-- [ ] `03_country_concentration` per layer
-- [ ] `04_tier2_feeding_tier1`
-- [ ] `05_stale_edges` (as_of older than N months)
-- [ ] `06_news_heat` (companies by count of NewsItem MENTIONS in the last N days, split by signal)
+- [x] `01_single_source_chokepoints` (3 hits: ASML, Lasertec, Ajinomoto)
+- [x] `02_upstream_of` (two SUPPLIES hops upstream of a named company, listed only, grouped by layer; NVIDIA gives 53 names in 9 layers)
+- [x] `03_country_concentration` per layer
+- [x] `04_tier2_feeding_tier1` (Advantest 3, then Lam, SUMCO, Shin-Etsu with 2)
+- [x] `05_stale_edges` (as_of older than N months; at 3 months the 37 guide edges from April show)
+- [x] `06_news_heat` (companies by count of NewsItem MENTIONS in the last N days, split by signal; runs clean, empty until Task 6)
 
 Analysis prompts in `prompts/analysis/`, one file each, written for a follower to paste into Claude Desktop with the MCP connected:
 
-- [ ] `which-of-my-holdings-share-a-chokepoint.md`
-- [ ] `what-breaks-if-X-stops-shipping.md`
-- [ ] `compare-two-names-on-the-graph.md`
-- [ ] `what-changed-this-week.md` (uses NewsItem nodes)
+- [x] `which-of-my-holdings-share-a-chokepoint.md`
+- [x] `what-breaks-if-X-stops-shipping.md`
+- [x] `compare-two-names-on-the-graph.md`
+- [x] `what-changed-this-week.md` (uses NewsItem nodes)
 
-- [ ] `docs/mcp.md`: MCP for Aura path first (find the MCP URL in the Aura console under Inspect, add as custom connector in Claude, log in with Aura credentials, screenshots), then the uvx `mcp-neo4j-cypher` fallback. Confirm whether the hosted server exposes write tools; record the answer at the top of the doc. Three worked examples showing the question, the generated Cypher, and the answer
-- [ ] `docs/analysis.md`: one paragraph per screen and per prompt
+- [x] `docs/mcp.md`: MCP for Aura path first (find the MCP URL in the Aura console under Inspect, add as custom connector in Claude, log in with Aura credentials, screenshots), then the uvx `mcp-neo4j-cypher` fallback. Confirm whether the hosted server exposes write tools; record the answer at the top of the doc. Three worked examples showing the question, the generated Cypher, and the answer. Written 2026-09-13 with three screenshot placeholders; the write-tool answer (yes, separate read-write tool, off by default) is from Neo4j's docs and blog, not yet exercised on this account
+- [x] `docs/analysis.md`: one paragraph per screen and per prompt (replaces v1 `docs/screens.md`)
 
-Done when: every screen returns a sensible result and every prompt works from a fresh Claude Desktop session using only docs/mcp.md.
+Done when: every screen returns a sensible result and every prompt works from a fresh Claude Desktop session using only docs/mcp.md. Screens verified live through MCP on 2026-09-13. **Not yet done:** the four prompts have not been run from a fresh Claude Desktop session with the MCP for Aura connector; that needs Pootranon's Claude Desktop and the connector set up per docs/mcp.md. Do it together with the Task 4 STOP test.
 
 ## Task 6: Daily news task
 
