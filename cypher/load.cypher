@@ -1,9 +1,9 @@
 // chip-kg loader — paste this whole file into Neo4j Browser (Aura) and run it.
 // Safe to re-run: everything uses MERGE, never CREATE.
 //
-// Replace <RAW_BASE> below with the raw GitHub URL for this repo's main
-// branch, e.g. https://raw.githubusercontent.com/<your-username>/chip-kg/main
-:param raw_base => "<RAW_BASE>";
+// If you forked this repo, replace raw_base below with your own fork's raw
+// GitHub URL: https://raw.githubusercontent.com/<your-username>/chip-kg/main
+:param raw_base => "https://raw.githubusercontent.com/pakornpootranon/chip-kg/main";
 
 // ---- constraints ----
 CREATE CONSTRAINT company_name IF NOT EXISTS FOR (c:Company) REQUIRE c.name IS UNIQUE;
