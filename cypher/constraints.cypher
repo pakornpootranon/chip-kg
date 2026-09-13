@@ -1,0 +1,14 @@
+CREATE CONSTRAINT company_name IF NOT EXISTS
+FOR (c:Company) REQUIRE c.name IS UNIQUE;
+
+CREATE CONSTRAINT layer_name IF NOT EXISTS
+FOR (l:Layer) REQUIRE l.name IS UNIQUE;
+
+CREATE CONSTRAINT technology_name IF NOT EXISTS
+FOR (t:Technology) REQUIRE t.name IS UNIQUE;
+
+CREATE CONSTRAINT country_name IF NOT EXISTS
+FOR (co:Country) REQUIRE co.name IS UNIQUE;
+
+CREATE CONSTRAINT chokepoint_name IF NOT EXISTS
+FOR (ch:Chokepoint) REQUIRE ch.name IS UNIQUE;

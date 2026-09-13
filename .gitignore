@@ -1,0 +1,11 @@
+pending/*
+!pending/.gitkeep
+!pending/applied
+pending/applied/*
+!pending/applied/.gitkeep
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
