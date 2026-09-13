@@ -1,90 +1,100 @@
 # PLAN
 
-Work top to bottom. Each task lists its deliverables and the condition that lets the next one start. Check boxes as you go and note anything you had to decide in `DECISIONS.md`.
+One task per Claude Code session. Commit at the end of each. Stop at every "STOP" line and wait for Pootranon.
 
-## Task 1: Scaffold
+## State on adoption (2026-09-13)
 
-- [x] Create repo layout from CLAUDE.md, `.gitignore` (pending/*, .env, __pycache__), `requirements.txt` (neo4j only), `.env.example` with `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`
-- [x] `cypher/constraints.cypher`: uniqueness constraints on every `name` property in the ontology
-- [x] `docs/README.md` skeleton with the follower path: create Aura Free instance, copy credentials, paste load script, run first screen
+This plan replaces the Hermes-based v1 plan. The v1 plan, CLAUDE.md and the last Hermes commit are preserved in git at `3b47111`. What v1 already built, and how it maps onto the tasks below:
 
-Done when: repo tree matches CLAUDE.md and constraints run clean on the Aura instance.
+- `data/nodes.csv`: 126 nodes (93 Company, 10 Layer, 6 Technology, 10 Country, 7 Chokepoint). Ids use `c_`, `l_`, `t_`, `co_`, `ch_` prefixes, not the `co:`, `ly:`, `te:`, `cn:`, `cp:` prefixes in CLAUDE.md. Company rows carry `listed` and `tier` but none of the rich fields; the `layer` column is filled only on Chokepoint rows. Decision for Pootranon before Task 3: migrate ids to the CLAUDE.md prefixes (edges.csv must change in step) or amend CLAUDE.md to the existing ones.
+- `data/edges.csv`: 267 edges (93 OPERATES_IN, 93 HQ_IN, 40 COMPETES_WITH, 18 SUPPLIES, 13 CONTROLS, 10 DEPENDS_ON), every edge already has `as_of`, `source`, `confidence`. Source value is `essential-guide`, CLAUDE.md says `guide`.
+- Task 2 universe: 93 listed companies exist, so at least 7 more are needed to reach 100. `data/universe.csv` does not exist yet; derive it from nodes.csv or supply it.
+- `scripts/validate.py` exists and exits 0 on the v1 checks. Missing the new checks: id prefixes, `Company.country`/`Company.layer` matching HQ_IN and OPERATES_IN targets, list fields parsing.
+- `cypher/constraints.cypher`, `reset.cypher`, `load.cypher`, `scripts/load.py` exist for the v1 schema. All must be regenerated for NewsItem, the new Company fields, and any id change.
+- `cypher/screens/01` to `05` exist with the required comment headers. `06_news_heat` is new.
+- `docs/README.md`, `docs/mcp.md` (uvx path only, no MCP for Aura), `docs/screens.md` (maps to the new `docs/analysis.md`) exist. `docs/aura.md`, `docs/schedule.md`, `prompts/`, `briefs/`, `source/` are new.
+- Orphaned from v1 and not referenced by this plan: `skills/`, `pending/`, `docs/hermes.md`, `docs/telegram.md`, `docs/provider.md`. Left in place on adoption. Decide in Task 1 whether to delete them.
+- `.env.example` uses `NEO4J_USERNAME` (Aura's own credential file name); Task 1 says `NEO4J_USER`. Keep `NEO4J_USERNAME` so followers can paste the Aura file as is.
+- The Essential Guide docx is outside the repo at `~/Downloads/Chip_War_Essential_Guide.docx` (2026-04-19, 35 KB). Task 1 converts it from there.
 
-## Task 2: Seed data from the Essential Guide
+Live checks done on adoption, so later sessions do not repeat them:
 
-- [x] Read the Chip War Essential Guide docx (path supplied at session start)
-- [x] Produce `data/nodes.csv` with columns: `id, label, name, ticker, exchange, listed, tier, order, code, layer` (unused columns blank)
-- [x] Produce `data/edges.csv` with columns: `from_id, to_id, type, as_of, source, confidence`
-- [x] Every Layer has at least three Companies; every Company has exactly one `OPERATES_IN` and one `HQ_IN` — **v2 (2026-09-13)**: expanded from 44→93 Companies (126 total nodes) via Bigdata.com, approved by the author as a second source alongside the guide (see `data/GAPS.md` v2 section for exactly what changed and why). Every layer now has 5+ companies, including `IP` which had zero. **150+ target itself was not pursued further** — 126 is the negotiated v2 baseline, not the original number; author signed off on this size rather than a further push. Live Aura counts reconfirmed via MCP (126 nodes / 264 edges, matches `validate.py`).
-- [x] Write `data/GAPS.md` listing every relationship the guide implies but does not state clearly enough to give `confidence: high`
-- [x] Present a summary table (nodes per label, edges per type, companies per layer, companies per tier) for Pootranon to review before Task 3 — presented in-session for the v1 74-node graph; Tasks 3-5 proceeded without a formal approval reply, and the v2 expansion above happened with direct author sign-off on the sourcing approach (Bigdata.com) rather than a separate summary-table approval step.
+- MCP for Aura: confirmed real and included on the Free tier (announced 2026-07-21). URL is `https://<INSTANCE_ID>.mcp-instances.neo4j.io`, also shown in the Aura console under Instances, the `[...]` menu, Inspect. Auth is a browser OAuth login with the Aura account, no stored credentials. Three tools: get schema, read (read-only Cypher), and a separate read-write tool that is off unless explicitly granted. That answers the Task 5 question: yes, a write tool exists, and the daily news task depends on the follower enabling it. Sources: neo4j.com/docs/mcp/current/mcp-for-aura/ and neo4j.com/blog/genai/introducing-mcp-for-aura/.
+- Claude Code Desktop local schedules: the docs call them "Scheduled tasks" (Manual, Hourly, Daily, Weekdays, Weekly). They run only while the Desktop app is open and the machine is awake. A time missed during sleep is skipped, and on restart the app does exactly one catch-up run for the most recent miss within seven days. "Run now" is a button on the task's detail page. "Keep computer awake" is under Settings, Desktop app, General. Source: code.claude.com/docs/en/desktop-scheduled-tasks.
+- Cowork scheduled tasks: confirmed to run remotely on a cadence with the machine off, with connectors, skills and plugins available. Paid plans only (Pro, Max, Team, Enterprise). Source: support.claude.com article 13854387.
+- Not confirmed from docs: that Cowork scheduled tasks can use a custom (user-added) connector rather than a built-in one. Task 6 must test this with the MCP for Aura connector before `docs/schedule.md` promises it.
 
-Done when: Pootranon has approved the summary and the tier assignments. Tier assignments are still the least-reviewed part of the file (see `data/GAPS.md` item 5) — flag if any need changing, especially the new EndDemand hyperscaler additions which got a placeholder tier.
+## Task 1: Scaffold and source conversion
 
-Done when: Pootranon has approved the summary and the tier assignments.
+- [ ] Layout from CLAUDE.md, `.gitignore` (briefs/*, .env, __pycache__), `requirements.txt` (neo4j), `.env.example` (NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
+- [ ] Convert the Essential Guide docx to `source/guide.md` (pandoc or python-docx). Delete nothing from it
+- [ ] `cypher/constraints.cypher` and `cypher/reset.cypher`
 
-## Task 3: Validation
+Done when: tree matches CLAUDE.md and constraints run clean on Aura via MCP.
 
-- [x] `scripts/validate.py`: every edge endpoint exists; `name` unique per label; tickers unique; every edge has `as_of`, `source`, `confidence`; `confidence` in the allowed set; every Company has one `OPERATES_IN` and one `HQ_IN`; `COMPETES_WITH` pairs not duplicated in reverse
-- [x] Exit code 1 with a readable list of failures, 0 otherwise
+## Task 2: Company universe (100+)
 
-Done when: `python scripts/validate.py` exits 0 on the Task 2 CSVs.
+- [ ] Read `data/universe.csv` if Pootranon has supplied it (preferred; built outside this session from his picks, the guide, and an S&P Global screen). If absent, extract every listed company from `source/guide.md` with layer and tier, then fill to 100 with at most one web search per missing company
+- [ ] Ensure columns: `id, name, ticker, exchange, country, layer, tier, chokepoint, source`
+- [ ] Print counts per layer, per country, per tier
 
-## Task 4: Loader
+STOP. Pootranon reviews the universe and tiers before any rich data is written.
 
-- [x] `cypher/load.cypher`: constraints, then `LOAD CSV` nodes by label, then edges by type, all `MERGE`, reading from raw GitHub URLs on the `main` branch
-- [x] `scripts/load.py`: same result via the Python driver, reading local CSVs, for people who prefer that path
-- [x] Test on a fresh Aura instance: drop all, run load.cypher, confirm counts via MCP match `validate.py` totals — reconfirmed live via MCP this session (44 Company / 10 Layer / 6 Technology / 7 Country / 7 Chokepoint, matches CSVs)
-- [x] Add a `cypher/reset.cypher` (drop everything) so followers can start over
+## Task 3: Rich nodes and edges
 
-Done when: paste-into-Aura load produces the expected counts twice in a row (idempotency check).
+- [ ] For each approved company write the rich properties into `data/nodes.csv`: `sub_segment, description, key_products, key_customers, fab_or_ops_geography`. Lists pipe-separated
+- [ ] Add Layer, Technology, Country, Chokepoint rows
+- [ ] `data/edges.csv`: `from_id, to_id, type, as_of, source, confidence`. Every Company gets exactly one OPERATES_IN and one HQ_IN. SUPPLIES and COMPETES_WITH from the guide first, then from the research URLs
+- [ ] `data/GAPS.md`: every relationship you believed but could not source
 
-## Task 5: Screens
+Done when: `data/` complete and counts printed. Work in batches of 20 companies per session if context gets heavy; commit after each batch.
 
-Each in `cypher/screens/`, each with the comment header required by CLAUDE.md:
+## Task 4: Validate and load
 
-- [x] `01_single_source_chokepoints.cypher`: Chokepoints controlled by exactly one Company
-- [x] `02_upstream_of.cypher`: everything within two `SUPPLIES` hops upstream of a named Company, listed only, grouped by Layer (parameterised on company name)
-- [x] `03_country_concentration.cypher`: per Layer, share of Companies by Country
-- [x] `04_tier2_feeding_tier1.cypher`: Tier 2 Companies ranked by count of `SUPPLIES` edges into Tier 1 — note: only 1 row returns on current data (Micron Technology -> NVIDIA); thin result is expected per the seed data's own caveat, not a bug
-- [x] `05_stale_edges.cypher`: edges with `as_of` older than N months (parameterised)
-- [x] `docs/screens.md`: one paragraph per screen in plain English
+- [ ] `scripts/validate.py`: ids unique and correctly prefixed, edge endpoint ids exist, names unique per label, tickers unique, Company.country and Company.layer match HQ_IN and OPERATES_IN targets, every edge has as_of/source/confidence, COMPETES_WITH not duplicated reversed, every Company has one OPERATES_IN and one HQ_IN, list fields parse. Exit 1 with a readable failure list
+- [ ] `cypher/load.cypher`: constraints, LOAD CSV from raw GitHub URLs on main, all MERGE
+- [ ] `scripts/load.py`: same from local CSVs
+- [ ] Reset Aura, load, confirm counts via MCP, load again, confirm identical (idempotent)
+- [ ] `docs/aura.md`: create a Free instance, copy credentials, paste load.cypher, screenshot each step
 
-Done when: each screen returns a sensible result on the loaded graph and Pootranon has read `docs/screens.md`.
+STOP. Pootranon pastes load.cypher into a second fresh Aura instance himself, as a follower would.
 
-## Task 6: Claude via MCP (Post 3)
+## Task 5: Screens and analysis prompts
 
-Prerequisite: Task 4 done.
+Screens in `cypher/screens/`, each with the required comment header:
 
-- [x] Confirm current Neo4j MCP server package name, install command, and config snippet for Claude Desktop and Claude Code. Write it in `docs/mcp.md` — package `mcp-neo4j-cypher` (PyPI 0.6.0) confirmed live against this session's own MCP connection; `claude mcp add` syntax confirmed via `--help`
-- [x] Three demo questions in `docs/mcp.md`, each with the natural-language question, the Cypher Claude produced, and the answer. Question 1 must be the single-source chokepoint question
-- [x] Note in the doc what Claude got wrong on first attempt, if anything. That is content for the post — ran genuinely blind (fresh agent, no access to `cypher/screens/`); real finding: Q3 has an undisclosed tie (Materials/Japan vs EndDemand/US both 100%) that a naive `LIMIT 1` would silently mask
+- [ ] `01_single_source_chokepoints`
+- [ ] `02_upstream_of` (two SUPPLIES hops upstream of a named company, listed only, grouped by layer)
+- [ ] `03_country_concentration` per layer
+- [ ] `04_tier2_feeding_tier1`
+- [ ] `05_stale_edges` (as_of older than N months)
+- [ ] `06_news_heat` (companies by count of NewsItem MENTIONS in the last N days, split by signal)
 
-Done when: all three demos reproduce from a fresh Claude session using only `docs/mcp.md`. All three numbers in the doc were captured directly from live MCP queries against the loaded Aura instance this session, and the blind-test agent's independent Cypher for all three questions returned the same figures.
+Analysis prompts in `prompts/analysis/`, one file each, written for a follower to paste into Claude Desktop with the MCP connected:
 
-## Task 7: Update loop on Hermes (Post 4)
+- [ ] `which-of-my-holdings-share-a-chokepoint.md`
+- [ ] `what-breaks-if-X-stops-shipping.md`
+- [ ] `compare-two-names-on-the-graph.md`
+- [ ] `what-changed-this-week.md` (uses NewsItem nodes)
 
-Prerequisite: Task 6 done and Post 3 demos run end to end.
+- [ ] `docs/mcp.md`: MCP for Aura path first (find the MCP URL in the Aura console under Inspect, add as custom connector in Claude, log in with Aura credentials, screenshots), then the uvx `mcp-neo4j-cypher` fallback. Confirm whether the hosted server exposes write tools; record the answer at the top of the doc. Three worked examples showing the question, the generated Cypher, and the answer
+- [ ] `docs/analysis.md`: one paragraph per screen and per prompt
 
-- [x] `scripts/propose_updates.py`: takes a source URL + a JSON list of proposed edges (the calling agent decides *what* the edges are — this script only validates and renders them), output is `pending/<date>.cypher` containing only `MATCH` + `MERGE` statements that add new edges with inline `as_of`/`source`/`confidence`. Never emits DELETE or a bare SET — enforced by construction plus a self-check before writing. Validates every endpoint exists and matches the ontology's expected label pair, and normalizes `COMPETES_WITH` to lower-name-first automatically.
-- [x] `scripts/apply_updates.py`: dry-runs by default; with `--confirm`, re-validates the file (rejects DELETE/SET and any statement not shaped exactly like propose_updates.py's output — a hand-edited file included in testing was correctly refused), applies to Aura, **appends the same rows to `data/edges.csv`** (not in the original task description, but required by CLAUDE.md's "never hand-edit Aura and forget to update the CSVs" rule, since `pending/` is gitignored and would otherwise leave zero permanent trace), then archives the file to `pending/applied/`.
-- [x] `skills/kg-update/SKILL.md`: written in valid agentskills.io frontmatter (verified the spec live: only `name`+`description` required, avoid angle brackets) plus Hermes-recognized `metadata.hermes.*` and `required_environment_variables` fields (verified against Hermes's own docs, not assumed). Covers the ontology, the add-only rule, and propose → Telegram → wait for approval → apply → re-run screen 05 → report.
-- [x] Hermes cron job text for the README: `hermes cron create "every monday 07:00" ... --skill kg-update`. Flagged honestly rather than guessed: Hermes's schedule strings have no timezone field, so "Asia/Bangkok" can't actually be encoded in the cron command — the README says so and tells the author to match their instance's local clock instead.
-- [x] Fallback section: plain cron + the same two scripts, with a caveat that without an LLM doing the news-reading step, the fallback only really suits a manual run against one already-chosen article.
+Done when: every screen returns a sensible result and every prompt works from a fresh Claude Desktop session using only docs/mcp.md.
 
-Done when: one full cycle has run on Hermes with a real news item, the diff arrived on Telegram, and the approved edges are visible in the graph via MCP. **Partially met**: no live Hermes account in this session, so the literal Hermes+Telegram round trip is untested — but the full underlying mechanism was proven end to end with two separate real, dated news items (Arm Holdings supplying IP for a Samsung 2nm SoC; ASML confirming TSMC and Samsung as High-NA EUV customers 2 and 3), sourced via live Bigdata.com search, run through propose → dry-run → --confirm → verified live in Aura via MCP → confirmed in `data/edges.csv`. Testing itself caught and fixed one real bug: `apply_updates.py` archived files by source filename only, so two same-day applies would silently clobber each other's archive entry (no data was lost — `edges.csv` already had both — but the audit trail would have been). Now numbers duplicates instead of overwriting.
+## Task 6: Daily news task
 
-**Restructured 2026-09-13 (validation pass, Fable):** the follower path above had real flaws found only by checking it against a live Hermes install: skill install needed YAML editing and hit a category-folder quirk and a sandbox/symlink quirk; Telegram and cron surfaces cannot prompt for secrets (README said "when prompted"); scripts needed a git clone because they validated against `data/nodes.csv`; and credentials used two names (`NEO4J_USER` vs the Aura file's `NEO4J_USERNAME`). Fixed by making the skill self-contained: the scripts moved to `skills/kg-update/scripts/` (plus a read-only `query.py`), validate against the live graph, use PEP 723 headers so `uv run` handles the dependency, mirror `data/edges.csv` only when run inside this repo, and use Neo4j's own credential names. Followers now install with one `hermes skills install <raw URL>` command; the ordered six-step guide is `docs/hermes.md`, Telegram is `docs/telegram.md`. Author-side tools (`validate.py`, `load.py`) stay in `scripts/`.
+- [ ] `prompts/daily-news.md`: the scheduled task prompt. Opens with: "Use the current time. Search the last 24 hours from now. Skip any item whose url already exists as a NewsItem." Pull all Company names via MCP; web search the last 24 hours for them plus chokepoint terms (EUV, HBM, CoWoS, export controls, advanced packaging); for each relevant item MERGE a NewsItem on url with title, date, two-sentence summary, signal, ingested_at, plus MENTIONS edges to the companies and AFFECTS edges to any Chokepoint or Technology; never touch existing Company nodes or edges; then run screen 06 and write `briefs/YYYY-MM-DD.md` with five to eight lines ranked by graph impact (chokepoint hit > Tier 1 > Tier 2 > Tier 3), each line naming the layer and the listed names it touches
+- [ ] Run the prompt once manually in Claude Code. Inspect the NewsItem nodes and the brief. Tighten the prompt until the brief is short and the nodes are clean
+- [ ] Create the builder routine in Claude Code Desktop (Code tab, Routines, New routine, Local, this repo folder, Daily 07:00, worktree off). Click Run now immediately and select "always allow" on every permission prompt so future runs do not stall. Enable Keep computer awake in Desktop settings
+- [ ] `scripts/counts.py`: prints Company count and edge count by type. Save the output to `briefs/baseline.json` before the first scheduled run
+- [ ] `docs/schedule.md`: follower path first: Cowork, Scheduled, New task, paste the same prompt, daily, with the MCP for Aura connector enabled; runs remotely with the machine off. Builder path second (Claude Code local routine) with the note that it only fires while Desktop is open and the machine is awake, and that a missed run fires once on wake
 
-## Task 8: Morning brief on Hermes (read-only)
+Done when: three consecutive mornings produce a brief and new NewsItem nodes, and `scripts/counts.py` shows Company count and every non-NewsItem edge type unchanged from baseline.
 
-Prerequisite: Task 6 done. Independent of Task 7 and may run before it.
+## Task 7: Follower test and release
 
-**Decision 2026-09-13:** Hermes reads the graph through the skill's own `query.py` (same scripts as Task 7), not through the MCP server, so followers enter credentials once and install nothing extra. MCP stays the path for Claude Desktop/Code users (Task 6). `docs/telegram.md` and `docs/provider.md` below are already written as part of the Task 7 restructure.
+- [ ] Fresh machine, fresh Aura, fresh Claude Desktop. Follow docs/ only. Note every point of confusion and fix the doc
+- [ ] Tag v1.0
 
-- [ ] `skills/kg-morning-brief/SKILL.md`: read-only. Pull `listed = true` Companies and their Layers via MCP; web search the past 24 hours for those names plus chokepoint terms (EUV, HBM, CoWoS, export controls); map each hit to the nodes and relationships it touches; rank by graph impact (single-source Chokepoint > Tier 1 > Tier 2 > Tier 3); deliver five to eight lines; tag items that look like a relationship change as "candidate for kg-update". Never writes to the graph
-- [ ] Hermes cron job text for the README: daily 07:00 Asia/Bangkok, deliver to the chat where the job was created
-- [x] `docs/telegram.md`: Path A (managed bot via QR, confirmed against Hermes's `telegram_managed_bot` onboarding client; screenshot placeholder left for the author), Path B (BotFather /newbot, @userinfobot, setup wizard), gateway install + pairing approve, keep-the-token-secret warning, and the "Telegram cannot collect secrets" caveat
-- [x] `docs/provider.md`: providers Hermes supports (from its own config), where keys live, and a labelled rough monthly cost range for one daily brief
-
-Done when: the brief has arrived on Telegram three mornings in a row from a fresh Hermes profile set up using only `docs/telegram.md` and `docs/provider.md`.
+STOP. Thai posts get written after this, using thai-blog-voice, one post per docs page.

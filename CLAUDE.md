@@ -1,75 +1,80 @@
 # chip-kg
 
-Public repo for a Thai Ko-fi series teaching individual investors to build a chip-industry knowledge graph in Neo4j and use it for stock screening. Followers download this repo, load it into Neo4j AuraDB Free, and query it by hand, through Claude (Neo4j MCP), and later through a scheduled Hermes Agent job.
+A Neo4j knowledge graph of 100+ listed chip-industry stocks, built and maintained entirely with Claude. Followers of a Thai Ko-fi series load it into Neo4j AuraDB Free, connect Claude to it through the Neo4j MCP server, ask investment questions in plain language, and run a daily Claude scheduled task that feeds news into the graph.
 
-Everything here is downloaded and run by non-engineers. Optimise for "paste one thing, it works" over cleverness.
+Everything here is downloaded by non-engineers. One paste, it works.
 
-## Stack
+## Stack (nothing else)
 
-- Graph: Neo4j AuraDB Free (cloud). Followers never install Neo4j.
-- Load path: `cypher/load.cypher` using `LOAD CSV WITH HEADERS FROM <raw GitHub URL>`. Python loader is the secondary path.
-- Python: 3.11+, `neo4j` official driver only. No LangChain, no ORMs.
-- Reads from AI: official Neo4j MCP server (`mcp-neo4j-cypher`). Verify the current package name and config format before writing docs; do not assume.
-- Scheduled updates: Hermes Agent (Nous Research) cron + a SKILL.md in `skills/kg-update/`. Not OpenClaw.
+- Neo4j AuraDB Free. Followers never install Neo4j.
+- MCP for Aura: Neo4j's hosted MCP server, one URL per instance (`https://<INSTANCE_ID>.mcp-instances.neo4j.io`), available on the Free tier, added to Claude as a custom connector with Aura login. This is the follower path. `mcp-neo4j-cypher` via uvx is the fallback only.
+- Python 3.11 with the `neo4j` driver only, for deterministic plumbing (validate, load). No LangChain, no other agents, no messaging bots.
+- Scheduling, two paths. Builder (Pootranon): Claude Code Desktop local routine in this repo, writes `briefs/`. Follower: Cowork scheduled task using the MCP for Aura connector, runs remotely with the machine off, brief appears as the task result. Same prompt for both.
 
-## Ontology (do not change without asking)
+## Token discipline for this repo
 
-Node labels and required properties:
+- Convert the Essential Guide docx to `source/guide.md` once in Task 1. Never read the docx again.
+- One task per session. Commit at the end of every task. Start the next task in a fresh session.
+- Deterministic work (CSV validation, loading, counting) is Python, not model reasoning.
+- Do not re-read files you wrote in this session. Do not summarise progress unprompted.
 
-- `Company` — `name` (unique), `ticker`, `exchange`, `listed` (bool), `tier` (1, 2, 3)
-- `Layer` — `name` (unique), `order` (int, upstream to downstream)
-- `Technology` — `name` (unique), e.g. EUV, HBM, CoWoS, GAA
-- `Country` — `name` (unique), ISO2 `code`
-- `Chokepoint` — `name` (unique), `layer` (name of the Layer it sits in)
+## Ontology
+
+Labels and required properties:
+
+All nodes carry `id` (unique, prefixed: `co:`, `ly:`, `te:`, `cn:`, `cp:`, `nw:`). Edges reference ids, never names.
+
+- `Company`: `name` (unique), `ticker`, `exchange`, `country`, `layer`, `sub_segment`, `tier` (1/2/3), `chokepoint` (bool), `description` (one to three sentences: what they sell, to whom, why it matters), `key_products` (list), `key_customers` (list), `fab_or_ops_geography` (list), `source` (URL or "guide")
+- `Layer`: `name` (unique), `order` (int)
+- `Technology`: `name` (unique), e.g. EUV, HBM, CoWoS, GAA, hybrid bonding
+- `Country`: `name` (unique), `code` (ISO2)
+- `Chokepoint`: `name` (unique), `layer`
+- `NewsItem`: `url` (unique), `title`, `date`, `summary` (two sentences), `signal` (positive/negative/neutral), `ingested_at`
 
 Relationships:
 
 - `(Company)-[:OPERATES_IN]->(Layer)`
 - `(Company)-[:SUPPLIES]->(Company)`
-- `(Company)-[:COMPETES_WITH]->(Company)` (write once per pair, lower name first)
+- `(Company)-[:COMPETES_WITH]->(Company)` (once per pair, lower name first)
 - `(Company)-[:DEPENDS_ON]->(Technology)`
 - `(Company)-[:HQ_IN]->(Country)`
 - `(Company)-[:CONTROLS]->(Chokepoint)`
+- `(NewsItem)-[:MENTIONS]->(Company)`
+- `(NewsItem)-[:AFFECTS]->(Chokepoint|Technology)`
 
-Every relationship carries three properties, no exceptions: `as_of` (ISO date), `source` (URL or "essential-guide"), `confidence` (high / medium / low).
+Every relationship carries `as_of` (ISO date), `source`, `confidence` (high/medium/low).
 
-Layers, in `order`: EDA, IP, Equipment, Materials, Foundry, IDM, Memory, Packaging, Fabless, EndDemand. Keep it at these ten.
+Layers in order: EDA, IP, Equipment, Materials, Foundry, IDM, Memory, Packaging, Fabless, EndDemand.
 
-Tier is Pootranon's picks-and-shovels tier, not market cap. Default rule until he overrides: Tier 1 = controls a chokepoint with one or two competitors worldwide; Tier 2 = critical supplier with three to five credible competitors; Tier 3 = commoditised layer. Flag any company where the guide is ambiguous rather than guessing.
+Tier is Pootranon's picks-and-shovels tier. Default: Tier 1 controls a chokepoint with one or two competitors worldwide; Tier 2 is a critical supplier with three to five credible competitors; Tier 3 is a commoditised layer. Flag ambiguous cases in `data/GAPS.md` instead of guessing.
 
 ## Data rules
 
-- `data/nodes.csv` and `data/edges.csv` are the source of truth. The graph is a derived artifact. Never hand-edit Aura and forget to update the CSVs.
-- Ticker convention: Yahoo Finance style with exchange suffix for non-US names (2330.TW, 8035.T, 000660.KS). US names bare (ASML, NVDA).
-- No market cap, price, or any field that goes stale in a week. Those belong in a screener join, not in the graph.
-- Loads use `MERGE`, never `CREATE`, so re-running is safe.
-- Automated update flows may only add relationships with a new `as_of`. They never `DELETE`, never `SET` on an existing edge. Stale edges are surfaced by a screen, not removed.
-- Source content for the seed graph is Pootranon's own Chip War Essential Guide docx. Do not scrape third-party sites to fill gaps; leave the gap and list it in `data/GAPS.md`.
+- `data/nodes.csv` and `data/edges.csv` are the source of truth. The graph is derived.
+- Minimum 100 `Company` nodes, all listed. The universe comes from `data/universe.csv`, which Pootranon supplies or approves before Task 3. Claude Code does at most one web search per company that lacks a source. Never loop over the whole universe searching.
+- `Company.country` and `Company.layer` must match the node's HQ_IN and OPERATES_IN targets. validate.py checks this.
+- Tickers Yahoo style: US bare (ASML, NVDA), others with suffix (2330.TW, 8035.T, 000660.KS).
+- No prices, market caps, or anything that goes stale in a week.
+- All loads are `MERGE`. Automated jobs only add `NewsItem` nodes and their edges. They never `DELETE` and never `SET` on existing Company nodes or edges. Stale edges are surfaced by a screen, not removed.
+- Follower-facing prose: plain English, no em dashes, no horizontal rules, currency as `$100 m` / `$100 b`.
 
-## Repo layout
+## Layout
 
 ```
-data/           nodes.csv, edges.csv, GAPS.md
-cypher/         constraints.cypher, load.cypher, screens/*.cypher
-scripts/        validate.py, load.py (author tools: need the repo checkout)
-skills/         kg-update/SKILL.md + kg-update/scripts/{propose_updates,apply_updates,query}.py
-                (Hermes, agentskills.io format; self-contained so `hermes skills install <raw URL>`
-                works with no git clone — the scripts talk to the live graph, never to data/*.csv,
-                except that when run from inside this repo they also sync data/edges.csv)
-pending/        proposed update statements awaiting approval (gitignored contents; followers get
-                ~/.chip-kg/pending/ instead, see skills/kg-update/SKILL.md)
-docs/           follower-facing README in English; Thai posts live elsewhere
+source/     guide.md (converted once)
+data/       nodes.csv, edges.csv, GAPS.md
+cypher/     constraints.cypher, load.cypher, reset.cypher, screens/*.cypher
+scripts/    validate.py, load.py
+prompts/    daily-news.md (the scheduled task prompt), analysis/*.md (saved questions)
+briefs/     YYYY-MM-DD.md written by the daily task (gitignored)
+docs/       README.md, aura.md, mcp.md, schedule.md, analysis.md
 ```
 
-Credentials use Neo4j's own names everywhere (`NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`) so a follower can paste the Aura credentials file as-is. Hermes talks to Neo4j only through the skill's scripts (one credential entry in `~/.hermes/.env`); the MCP server is for Claude Desktop/Code users (`docs/mcp.md`).
+## Working rules
 
-## Working rules for this session
-
-- Follow `PLAN.md` in order. Do not start a task whose prerequisite is unchecked.
-- Run `python scripts/validate.py` before every commit. It must exit 0.
-- After any change to `cypher/load.cypher`, test it on a fresh Aura instance (drop all, reload) and confirm node and edge counts against the CSVs using the Neo4j MCP connection.
-- Every `cypher/screens/*.cypher` file starts with a comment block: what the screen finds, why an investor cares, and what a hit does and does not mean.
-- Ask before adding a label, relationship type, or layer. Ask before adding any dependency.
-- Write follower-facing text in plain English. No em dashes, no horizontal rules. Currency as `$100 m` / `$100 b`.
-- The skill bundle (`skills/kg-update/SKILL.md` and its `scripts/`) is scanned by Hermes's skills-guard on install. Never mention the Hermes secrets file path in it (critical, unforceable block) and never use bare `os.environ` (high); `os.environ.get("NAME")` is fine. Check before pushing: `~/.hermes/hermes-agent/venv/bin/python -c 'import sys; sys.path.insert(0,"/Users/mahachaipootranonn/.hermes/hermes-agent"); from tools.skills_guard import scan_skill; from pathlib import Path; print(scan_skill(Path("skills/kg-update"), "url").verdict)'` must print `safe`.
-- Run the skill scripts manually from the repo with `uv run --env-file .env skills/kg-update/scripts/<script>.py ...` (the scripts do not read .env themselves; Hermes injects it).
+- Follow PLAN.md in order. Stop where it says stop.
+- `python scripts/validate.py` must exit 0 before any commit.
+- After changing `load.cypher`, reset a fresh Aura instance, reload, and confirm counts through the MCP connection match `validate.py` totals.
+- Every screen file opens with a comment: what it finds, why an investor cares, what a hit does and does not mean.
+- The daily news prompt must search "the last 24 hours from now" and MERGE on `url`. Scheduled tasks can fire hours late after a missed run; never assume the run time.
+- Ask before adding a label, relationship type, layer, or dependency.
