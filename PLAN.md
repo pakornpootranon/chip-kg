@@ -57,7 +57,7 @@ Done when: `data/` complete and counts printed. Work in batches of 20 companies 
 - [x] Reset Aura, load, confirm counts via MCP, load again, confirm identical (idempotent). Done 2026-09-13 with `load.py --reset` then `load.py`: 216 nodes, 869 edges both times, confirmed through the MCP connection
 - [x] `docs/aura.md`: create a Free instance, copy credentials, paste load.cypher, screenshot each step. Written with five screenshot placeholders under `docs/img/`; Pootranon takes the screenshots during the STOP test below
 
-STOP. Pootranon pastes load.cypher into a second fresh Aura instance himself, as a follower would. Requires `git push` first.
+STOP. Pootranon pastes load.cypher into a second fresh Aura instance himself, as a follower would. Requires `git push` first. Update 2026-09-13: a second Free instance could not be created from this session (no browser connection, no Aura API key), so on Pootranon's instruction the existing instance was wiped with reset.cypher and every statement of load.cypher was executed in order through the driver, reading the CSVs from raw GitHub main. Result 216 nodes, 869 edges, all constraints present. The paste-into-Browser experience on a truly fresh instance, with screenshots, is still untested.
 
 ## Task 5: Screens and analysis prompts
 
