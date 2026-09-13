@@ -46,9 +46,10 @@ folder as the skill directory; after a normal install it is
   `~/.chip-kg/pending/applied/`. Refuses any file containing DELETE or SET.
 
 All three read `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD` from the
-environment. If any is missing, stop and tell the user to enter them from the
-desktop app or `hermes chat` (a Telegram chat cannot collect secrets), or to
-add them to `~/.hermes/.env`.
+environment; Hermes provides them once the user has entered them. If any is
+missing, stop and tell the user to enter them from the desktop app or
+`hermes chat` (a Telegram chat cannot collect secrets), following the
+credentials step in docs/hermes.md in the chip-kg repo.
 
 ## The ontology
 

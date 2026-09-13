@@ -23,8 +23,8 @@ When run inside the chip-kg repo it also appends the applied edges to
 data/edges.csv, because there the CSVs are the source of truth. Followers
 running the installed skill have no repo, so that step is skipped.
 
-Needs NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD in the environment or in a
-.env file next to the pending dir (Hermes loads ~/.hermes/.env for you).
+Needs NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD in the environment. Hermes
+provides them; for a manual run use `uv run --env-file <your file> ...`.
 """
 
 import csv
@@ -54,19 +54,7 @@ def home_dir():
     return repo_root() or Path(os.environ.get("CHIP_KG_HOME", Path.home() / ".chip-kg")).expanduser()
 
 
-def load_dotenv(path):
-    if not path.exists():
-        return
-    for line in path.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
-
-
 def connect():
-    load_dotenv(home_dir() / ".env")
     uri = os.environ.get("NEO4J_URI")
     user = os.environ.get("NEO4J_USERNAME") or os.environ.get("NEO4J_USER")
     password = os.environ.get("NEO4J_PASSWORD")
@@ -75,7 +63,7 @@ def connect():
     try:
         from neo4j import GraphDatabase
     except ImportError:
-        sys.exit("The neo4j package is missing. Run this script with `uv run`, or `pip install neo4j`.")
+        sys.exit("The neo4j package is missing. Run this script with uv run, which installs it.")
     return GraphDatabase.driver(uri, auth=(user, password))
 
 
