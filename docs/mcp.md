@@ -38,15 +38,15 @@ Then inside a Claude Code session type `/mcp`, pick `chip-kg` and follow the log
 
 ### 3. Turn on the connector in a chat
 
-Start a new chat, open the tools menu (the plus or sliders icon under the message box) and make sure `chip-kg` is enabled. Then ask a question. The first time, Claude will call the schema tool; that is normal.
+Start a new chat, open the tools menu under the message box and make sure `chip-kg` is enabled. Inside the chip-kg entry you will see its three tools; leave the one with write in its name off unless you are running the daily task. Then ask a question. The first time, Claude will call the schema tool; that is normal. If that call shows an error, ask Claude to retry it with a sample size.
 
 ### If the instance is paused
 
 Aura Free pauses after a few days without use. The connector then fails to connect. Open the console, click **Resume** on the instance, wait a minute, try again.
 
-## Path B: run the MCP server yourself (fallback)
+## Path B: run the MCP server yourself (fallback, mostly for the author)
 
-Use this if custom connectors are not available on your plan, or if you want the graph in Claude Code without OAuth. It runs Neo4j's open-source `mcp-neo4j-cypher` server on your computer with [`uv`](https://docs.astral.sh/uv/) installed.
+Use this if custom connectors are not available on your plan, or if you want the graph in Claude Code without OAuth. It runs Neo4j's open-source `mcp-neo4j-cypher` server on your computer. You need [`uv`](https://docs.astral.sh/uv/getting-started/installation/) installed, and for the Claude Code variant [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) itself.
 
 **Claude Desktop:** edit the config file (macOS `~/Library/Application Support/Claude/claude_desktop_config.json`, Windows `%APPDATA%\Claude\claude_desktop_config.json`) and add, with your own credentials:
 
@@ -80,7 +80,7 @@ claude mcp add chip-kg -s user \
   -- uvx mcp-neo4j-cypher
 ```
 
-Two quirks of this server, seen while building the repo. On the first schema call Claude may get an error about a `None` variable; it recovers by retrying with a sample size. And its write tool refuses schema statements like `CREATE CONSTRAINT`, while its read tool happens to run them. Use `scripts/load.py` or the Aura query editor for constraints.
+Two quirks of this server, seen while building the repo. On the first schema call Claude may get an error about a `None` variable; it recovers by retrying with a sample size. And its write tool refuses schema statements like `CREATE CONSTRAINT`, while its read tool happens to run them. Use `scripts/load.py` or the Query editor for constraints.
 
 ## Three worked examples
 

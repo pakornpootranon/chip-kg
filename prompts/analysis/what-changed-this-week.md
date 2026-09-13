@@ -1,8 +1,8 @@
 # What changed this week?
 
-Paste into Claude Desktop with the Neo4j connector on. Needs NewsItem nodes, which the daily task adds (docs/schedule.md). Before the task has run, this returns nothing.
+Paste into Claude Desktop with the chip-kg connector on. Needs NewsItem nodes, which the daily task adds (docs/schedule.md). Before the task has run, this returns nothing.
 
----
+Copy everything below this line.
 
 Use the current date. Look at the last 7 days in the Neo4j graph.
 

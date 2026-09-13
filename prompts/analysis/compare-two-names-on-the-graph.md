@@ -1,8 +1,8 @@
 # Compare two names on the graph
 
-Paste into Claude Desktop with the Neo4j connector on. Replace the two company names.
+Paste into Claude Desktop with the chip-kg connector on. Replace the two company names.
 
----
+Copy everything below this line.
 
 Compare Lam Research and Tokyo Electron using only the Neo4j graph.
 

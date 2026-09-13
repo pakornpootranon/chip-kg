@@ -9,15 +9,17 @@ Ten minutes, no software to install. You need a browser and a free Neo4j account
 3. A dialog shows your connection details: **URI**, **Username** (`neo4j`) and a generated **Password**. Click **Download** to save the credentials file. This is the only time the password is shown. If you lose it you can reset it from the instance menu later.
 4. Wait until the instance card says **Running**. This takes one to three minutes.
 
+Screenshots are being added under `docs/img/`; the text is complete without them.
+
 Screenshot placeholder: `docs/img/aura-01-create.png` (Create instance dialog with AuraDB Free selected).
 Screenshot placeholder: `docs/img/aura-02-credentials.png` (credentials dialog with the Download button).
 
-## 2. Open the query editor
+## 2. Open the Query editor
 
-1. On the instance card click **Open** (or **Query**). The Neo4j query editor opens in a new tab.
+1. On the instance card click **Query**. The Query editor opens in a new tab. Every doc in this repo calls it the Query editor.
 2. It may ask you to connect. Use the username and password from step 1.
 
-Screenshot placeholder: `docs/img/aura-03-open.png` (instance card with the Open button).
+Screenshot placeholder: `docs/img/aura-03-open.png` (instance card with the Query button).
 
 ## 3. Paste the loader
 
@@ -30,7 +32,7 @@ Screenshot placeholder: `docs/img/aura-05-counts.png` (result row showing 216 an
 
 If you see fewer edges than expected, run the loader again. It is safe: every statement uses `MERGE`, so nothing is duplicated.
 
-If the editor refuses to run multiple statements, look for a setting called **Enable multi statement query editor** and turn it on, then paste again.
+If the editor runs only the first statement, run the file in pieces: the constraints block, then each LOAD CSV block, in order.
 
 ## 4. Try one query
 
@@ -42,15 +44,15 @@ RETURN cp.name AS chokepoint, collect(c.name) AS controlled_by
 ORDER BY size(controlled_by), chokepoint;
 ```
 
-Then go to [`docs/mcp.md`](mcp.md) to connect Claude to the graph and ask questions in plain language.
+Then go to [`docs/mcp.md`](mcp.md) (needs a paid Claude plan) to connect Claude to the graph and ask questions in plain language.
 
 ## Starting over
 
 To wipe the instance and reload, paste [`cypher/reset.cypher`](../cypher/reset.cypher) and run it, then paste `load.cypher` again.
 
-## Loading from your own computer instead
+## Loading from your own computer instead (author path)
 
-If you cloned the repo and have Python 3.11 or later:
+Followers can skip this. If you cloned the repo and have Python 3.11 or later:
 
 ```
 pip install -r requirements.txt

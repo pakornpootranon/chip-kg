@@ -1,6 +1,6 @@
 # Screens and analysis prompts
 
-Two ways to ask the graph questions. **Screens** are plain Cypher files in `cypher/screens/`; paste one into the Aura query editor, or ask Claude to run it. **Analysis prompts** are text files in `prompts/analysis/`; paste one into Claude Desktop with the chip-kg connector on ([`mcp.md`](mcp.md)) and Claude writes the Cypher itself. Every screen file opens with a comment saying what it finds, why an investor cares, and what a hit does and does not mean.
+Two ways to ask the graph questions. **Screens** are plain Cypher files in `cypher/screens/`; paste one into the Query editor, or ask Claude to run it. **Analysis prompts** are text files in `prompts/analysis/`; paste one into Claude Desktop with the chip-kg connector on ([`mcp.md`](mcp.md)) and Claude writes the Cypher itself. Every screen file opens with a comment saying what it finds, why an investor cares, and what a hit does and does not mean.
 
 ## Screens
 
@@ -10,7 +10,7 @@ Lists every chokepoint that exactly one company controls. Today that is ASML on 
 
 ### 02 Upstream of a company
 
-Give it a company name and it walks up to two SUPPLIES hops backwards, grouping the suppliers by layer and showing each one's tier. Pointed at NVIDIA it returns fifty-three companies across nine layers, from TSMC and the memory makers one hop out to the wafer, gas and subsystem suppliers two hops out. This is the core relationship screen the graph exists for. Distance says nothing about revenue materiality, so treat it as a list of names to research, not a ranking.
+Give it a company name (change `"NVIDIA"` on the `:param company_name` line at the top of the file) and it walks up to two SUPPLIES hops backwards, grouping the suppliers by layer and showing each one's tier. Pointed at NVIDIA it returns fifty-three companies across nine layers, from TSMC and the memory makers one hop out to the wafer, gas and subsystem suppliers two hops out. This is the core relationship screen the graph exists for. Distance says nothing about revenue materiality, so treat it as a list of names to research, not a ranking.
 
 ### 03 Country concentration by layer
 

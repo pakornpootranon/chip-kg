@@ -1,8 +1,8 @@
 # Which of my holdings share a chokepoint?
 
-Paste into Claude Desktop with the Neo4j connector on. Replace the list of holdings with your own company names or tickers.
+Paste into Claude Desktop with the chip-kg connector on. Replace the list of holdings with your own company names or tickers.
 
----
+Copy everything below this line.
 
 I hold these chip stocks: NVIDIA, ASML, SK Hynix, Advantest, HOYA.
 

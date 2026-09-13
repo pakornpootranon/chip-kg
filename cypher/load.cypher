@@ -1,5 +1,5 @@
-// chip-kg loader. Paste this whole file into the Neo4j Browser query box for
-// your Aura instance and run it. It reads the CSVs straight from GitHub.
+// chip-kg loader. Paste this whole file into the Query editor of your Aura
+// instance (Query button on the instance card) and run it. It reads the CSVs straight from GitHub.
 // Safe to run again: everything is MERGE, nothing is CREATE or DELETE.
 //
 // If you forked the repo, change the username in raw_base to your own.

@@ -1,4 +1,4 @@
-// chip-kg constraints. Paste into Neo4j Browser (Aura) and run.
+// chip-kg constraints. Paste into the Aura Query editor and run.
 // Safe to re-run: every statement uses IF NOT EXISTS.
 //
 // Every node has a unique id (prefixed co: ly: te: cn: cp: nw:).

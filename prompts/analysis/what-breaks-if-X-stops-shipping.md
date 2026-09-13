@@ -1,8 +1,8 @@
 # What breaks if X stops shipping?
 
-Paste into Claude Desktop with the Neo4j connector on. Replace the company name.
+Paste into Claude Desktop with the chip-kg connector on. Replace the company name.
 
----
+Copy everything below this line.
 
 Suppose ASML stopped shipping for a year.
 

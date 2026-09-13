@@ -6,7 +6,7 @@ The same prompt runs in two places. Followers use Cowork, which runs in the clou
 
 ## Before either path: allow writes
 
-The task adds nodes, so the chip-kg connector must have its read-write tool enabled. In the connector's settings in Claude, open the tools list and switch on the read-write tool alongside schema and read. Leave it off in chats where you only ask questions.
+The task adds nodes, so the chip-kg connector must have its write tool enabled for the task. In a chat or in the task's connector settings, open the tools menu under the message box, expand `chip-kg`, and switch on the tool with write in its name, alongside the schema and read tools. Leave it off in chats where you only ask questions.
 
 ## Path A: Cowork scheduled task (followers)
 
@@ -24,7 +24,7 @@ Screenshot placeholder: `docs/img/schedule-02-cowork-connectors.png`.
 
 Each later run appears in the Scheduled list with its brief. Scheduled runs can fire later than the set time; the prompt handles that by searching backwards from whenever it actually runs.
 
-If the task cannot see the chip-kg connector, the connector is probably not enabled for scheduled tasks on your plan. Fall back to Path B, or run the prompt by hand in a normal chat each morning.
+This path has not yet been verified with a custom connector on a follower plan. If the task cannot see the chip-kg connector, run the prompt by hand: open a normal chat with chip-kg enabled and paste `prompts/daily-news.md`. The brief comes back as the reply.
 
 ## Path B: Claude Code Desktop local task (author)
 
@@ -42,7 +42,14 @@ How missed runs behave: if the machine is asleep at 07:00 the run is skipped. Wh
 
 ## Check that the task only added news
 
-Before the first scheduled run, save a baseline of the graph:
+Followers: paste this into the Query editor any time; the Company count should always be 171 and the only things that grow are NewsItem, MENTIONS and AFFECTS:
+
+```cypher
+MATCH (n) WITH labels(n)[0] AS label, count(*) AS c
+RETURN label, c ORDER BY label;
+```
+
+Author: before the first scheduled run, save a baseline of the graph (needs the repo, Python and `.env`):
 
 ```
 python scripts/counts.py > briefs/baseline.json
