@@ -6,7 +6,7 @@ Paste into Claude Desktop with the Neo4j connector on. Needs NewsItem nodes, whi
 
 Use the current date. Look at the last 7 days in the Neo4j graph.
 
-Fetch the schema first. Then, showing the Cypher:
+Fetch the schema first (if the schema tool errors, retry it with a sample size). NewsItem.date is a string in YYYY-MM-DD form and signal is lowercase, one of positive, negative, neutral. If the graph has no NewsItem nodes, say so in one line and stop. Then, showing the Cypher:
 
 1. List every NewsItem with date in the last 7 days: title, date, signal, url, the Companies it MENTIONS and the Chokepoints or Technologies it AFFECTS.
 2. Rank the mentioned Companies by number of items, split into positive, negative and neutral. Include each company's layer, tier and chokepoint flag.

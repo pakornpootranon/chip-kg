@@ -6,7 +6,7 @@ Paste into Claude Desktop with the Neo4j connector on. Replace the two company n
 
 Compare Lam Research and Tokyo Electron using only the Neo4j graph.
 
-Fetch the schema first. Find both Company nodes by name or ticker. Then, showing the Cypher, build one comparison table with these rows:
+Fetch the schema first (if the schema tool errors, retry it with a sample size). Find both Company nodes by name or ticker. COMPETES_WITH is stored once per pair, so match it without direction. Where a row comes back empty, write "none recorded in the graph" rather than "none", because the graph is incomplete. For country concentration, count the customers' countries from the SUPPLIES edges, not the fab_or_ops_geography list. Then, showing the Cypher, build one comparison table with these rows:
 
 - Layer, sub-segment, tier, chokepoint flag, headquarters country
 - Fab or operations geography (the list on the node)
