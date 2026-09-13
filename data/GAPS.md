@@ -1,5 +1,11 @@
 # Gaps and judgment calls
 
+## v5 (2026-09-13): Hermes path dropped
+
+The Hermes follower path described in v4 below was abandoned the same day and
+its files removed from the repo. History kept here for the record only. The
+update loop is now a Claude scheduled task writing NewsItem nodes; see PLAN.md.
+
 ## v4 (2026-09-13): follower path rebuilt after a validation pass
 
 What was wrong for a follower, all found by checking against a live Hermes

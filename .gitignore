@@ -1,8 +1,4 @@
-pending/*
-!pending/.gitkeep
-!pending/applied
-pending/applied/*
-!pending/applied/.gitkeep
+briefs/*
 .env
 __pycache__/
 *.pyc

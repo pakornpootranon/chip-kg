@@ -13,7 +13,7 @@ This plan replaces the Hermes-based v1 plan. The v1 plan, CLAUDE.md and the last
 - `cypher/constraints.cypher`, `reset.cypher`, `load.cypher`, `scripts/load.py` exist for the v1 schema. All must be regenerated for NewsItem, the new Company fields, and any id change.
 - `cypher/screens/01` to `05` exist with the required comment headers. `06_news_heat` is new.
 - `docs/README.md`, `docs/mcp.md` (uvx path only, no MCP for Aura), `docs/screens.md` (maps to the new `docs/analysis.md`) exist. `docs/aura.md`, `docs/schedule.md`, `prompts/`, `briefs/`, `source/` are new.
-- Orphaned from v1 and not referenced by this plan: `skills/`, `pending/`, `docs/hermes.md`, `docs/telegram.md`, `docs/provider.md`. Left in place on adoption. Decide in Task 1 whether to delete them.
+- The v1 Hermes files (`skills/`, `pending/`, `docs/hermes.md`, `docs/telegram.md`, `docs/provider.md`) were deleted on adoption. Hermes is out of this build entirely; do not reintroduce it.
 - `.env.example` uses `NEO4J_USERNAME` (Aura's own credential file name); Task 1 says `NEO4J_USER`. Keep `NEO4J_USERNAME` so followers can paste the Aura file as is.
 - The Essential Guide docx is outside the repo at `~/Downloads/Chip_War_Essential_Guide.docx` (2026-04-19, 35 KB). Task 1 converts it from there.
 

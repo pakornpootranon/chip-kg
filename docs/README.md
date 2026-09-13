@@ -2,8 +2,8 @@
 
 A small knowledge graph of the semiconductor industry (companies, supply chain
 layers, technologies, countries, and chokepoints) built for relationship-based
-stock screening. Query it by hand in Neo4j Browser, through Claude via MCP, or
-through a scheduled Hermes Agent job.
+stock screening. Query it by hand in Neo4j Browser or through Claude via MCP,
+and let a daily Claude scheduled task feed news into it.
 
 No engineering background required. Follow these steps in order.
 
@@ -39,15 +39,13 @@ your Aura instance and ask it questions in plain English.
 
 ## 5. Keep it updated automatically (optional)
 
-The graph stays useful only if real news keeps getting added. Hermes Agent, a
-free AI agent that runs on your own computer, can do the weekly pass for you:
-it reads the week's news for the companies in your graph, proposes new
-relationships, sends you the diff on Telegram, and writes to your Neo4j only
-after you approve. It never deletes or edits anything already in the graph.
+The graph stays useful only if real news keeps getting added. A daily Claude
+scheduled task reads the last 24 hours of news for the companies in your
+graph, adds each relevant item as a NewsItem linked to the companies and
+chokepoints it touches, and writes you a short morning brief. It never deletes
+or edits anything already in the graph.
 
-Six commands, in order, with the reasons for the order:
-[`docs/hermes.md`](hermes.md). Telegram pairing is in
-[`docs/telegram.md`](telegram.md).
+Setup is in [`docs/schedule.md`](schedule.md) (written in Task 6).
 
 ## What's in this repo
 
