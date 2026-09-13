@@ -1,5 +1,43 @@
 # Gaps and judgment calls
 
+## v3 (2026-09-13): Task 7 update-loop scripts, tested live
+
+`scripts/propose_updates.py` and `scripts/apply_updates.py` were tested end
+to end against the real live Aura instance using two genuine, dated news
+items (found via Bigdata.com search, not invented): Arm Holdings supplying
+AI accelerator IP for a joint Samsung 2nm SoC (Sep 4 2026), and ASML
+confirming TSMC and Samsung as its 2nd/3rd High-NA EUV customers (Sep 9
+2026). Both are now real edges in the graph with `source` set to the actual
+article URL — not test data to be cleaned up later.
+
+**One real bug found by this testing, now fixed:** `apply_updates.py`
+originally archived a file to `pending/applied/<same name>`, so a second
+same-day apply would silently overwrite the first one's archive entry (no
+graph or `edges.csv` data was lost — those are keyed correctly — but the
+local audit trail would have been). Fixed to number duplicates instead
+(`<name>-2.cypher`, etc.).
+
+**Local environment note, not a repo bug:** this machine's network does TLS
+interception on port 7687 (a self-signed cert shows up where Aura's real
+cert should be — almost certainly corporate security software, not
+anything wrong with Aura). Direct `neo4j+s://` connections from a local
+Python script fail with `CERTIFICATE_VERIFY_FAILED` here, even though the
+MCP server connection works fine (it likely runs in an isolated environment
+with its own trust handling). Worked around locally with `neo4j+ssc://`
+(same encryption, skips full chain verification) — **do not put this in
+the public docs as the default**, since it weakens security for anyone on a
+normal network. If the author hits the same error running these scripts
+locally, that's the fix to try, but `neo4j+s://` should stay the documented
+default in `.env.example`/README.
+
+**Not tested: the actual Hermes + Telegram round trip.** No live Hermes
+account was available in this session. `skills/kg-update/SKILL.md` and the
+README's cron instructions are written against Hermes's real documented
+skill/cron format (verified live via its docs, not guessed), but "the diff
+arrived on Telegram and a human approved it in that chat" specifically
+needs a real Hermes instance to confirm. Worth a real run before calling
+Task 7 fully closed.
+
 ## v2 (2026-09-13): expanded via Bigdata.com beyond the Essential Guide
 
 Author approved a second source for this round: the Bigdata.com company/

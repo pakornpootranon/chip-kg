@@ -263,3 +263,6 @@ c_arm,c_nvidia,SUPPLIES,2026-09-13,bigdata.com / industry knowledge,medium
 c_sandisk,t_nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
 c_gigadevice,t_nand,DEPENDS_ON,2026-09-13,bigdata.com company profile,medium
 c_nanya,t_dram,DEPENDS_ON,2026-09-13,bigdata.com company profile,high
+c_arm,c_samsung,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/A5D30993895106F2EDB7BFCBE25A4AF0,low
+c_asml,c_tsmc,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/675F51496F8D503911CF021D02B17E8A,medium
+c_asml,c_samsung,SUPPLIES,2026-09-13,https://app.bigdata.com/documents/675F51496F8D503911CF021D02B17E8A,medium
