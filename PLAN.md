@@ -51,13 +51,13 @@ Done when: `data/` complete and counts printed. Work in batches of 20 companies 
 
 ## Task 4: Validate and load
 
-- [ ] `scripts/validate.py`: ids unique and correctly prefixed, edge endpoint ids exist, names unique per label, tickers unique, Company.country and Company.layer match HQ_IN and OPERATES_IN targets, every edge has as_of/source/confidence, COMPETES_WITH not duplicated reversed, every Company has one OPERATES_IN and one HQ_IN, list fields parse. Exit 1 with a readable failure list
-- [ ] `cypher/load.cypher`: constraints, LOAD CSV from raw GitHub URLs on main, all MERGE
-- [ ] `scripts/load.py`: same from local CSVs
-- [ ] Reset Aura, load, confirm counts via MCP, load again, confirm identical (idempotent)
-- [ ] `docs/aura.md`: create a Free instance, copy credentials, paste load.cypher, screenshot each step
+- [x] `scripts/validate.py`: ids unique and correctly prefixed, edge endpoint ids exist, names unique per label, tickers unique, Company.country and Company.layer match HQ_IN and OPERATES_IN targets, every edge has as_of/source/confidence, COMPETES_WITH not duplicated reversed, every Company has one OPERATES_IN and one HQ_IN, list fields parse. Exit 1 with a readable failure list. Done 2026-09-13; also checks edge label shapes, as_of date format, required columns per label, no em dashes in descriptions
+- [x] `cypher/load.cypher`: constraints, LOAD CSV from raw GitHub URLs on main, all MERGE. Rewritten for v2: nodes MERGE on `id`, edges MATCH on `id` (no more triple LOAD CSV joins), list fields split on `|`, ends with a count check. Not yet run end to end because the repo is not pushed, so raw GitHub still serves the v1 CSVs. Push, then test at the STOP below
+- [x] `scripts/load.py`: same from local CSVs. Reads `.env`, has `--reset` and `--counts`, compares live counts to the CSVs and exits 1 on mismatch
+- [x] Reset Aura, load, confirm counts via MCP, load again, confirm identical (idempotent). Done 2026-09-13 with `load.py --reset` then `load.py`: 216 nodes, 869 edges both times, confirmed through the MCP connection
+- [x] `docs/aura.md`: create a Free instance, copy credentials, paste load.cypher, screenshot each step. Written with five screenshot placeholders under `docs/img/`; Pootranon takes the screenshots during the STOP test below
 
-STOP. Pootranon pastes load.cypher into a second fresh Aura instance himself, as a follower would.
+STOP. Pootranon pastes load.cypher into a second fresh Aura instance himself, as a follower would. Requires `git push` first.
 
 ## Task 5: Screens and analysis prompts
 

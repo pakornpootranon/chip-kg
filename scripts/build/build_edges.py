@@ -56,8 +56,8 @@ for i, r in nodes.items():
     add(i, "ly:" + r["layer"].lower(), "OPERATES_IN", source=src, conf="high")
     add(i, "cn:" + r["country"].lower(), "HQ_IN", source=src, conf="high")
 
-# 2. migrate v1 edges (from git HEAD, not the working tree)
-v1 = subprocess.run(["git", "show", "HEAD:data/edges.csv"], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+# 2. migrate v1 edges from the last v1 commit (1c16f5f), so re-running is idempotent
+v1 = subprocess.run(["git", "show", "1c16f5f:data/edges.csv"], cwd=ROOT, capture_output=True, text=True, check=True).stdout
 for r in csv.DictReader(v1.splitlines()):
     if r["type"] in ("OPERATES_IN", "HQ_IN"):
         continue
